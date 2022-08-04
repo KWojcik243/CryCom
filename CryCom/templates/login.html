@@ -1,26 +1,32 @@
 {% extends 'includes/login_register_header.html' %}
 
 {% block content %}
-     <ul>
-      <li><a href="/register/">Register</a></li>
-    </ul>
-    <p>Login</p>
-
-    <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
-        <div>
-            <input type="text" placeholder="Email" name="email">
+     
+    <div class="login action_box">
+        <p>Login</p>
+        <div class="login_form">
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="div_login_input">
+                    <input class='log_input' type="text" placeholder="Email" name="email">
+                </div>
+                <div class="div_login_input">
+                    <input class='log_input' type="password" placeholder="Password" name="password">
+                </div>
+                <p style="margin-top:15px; font-size:20px">Forgot password? <a href="{% url 'login' %}">Get new</a></p>
+                <button class='login_buttons left_b' type="submit"><p>Login</p></button>
+                <button class='login_buttons right_b' onclick="location.href='/register'" type="button">
+                    <p>Register</p></button>
+            </form>
+            {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+            {% endif %}
         </div>
-        <div>
-            <input type="password" placeholder="Password" name="password">
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-    {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-    {% endif %}
+            
+    </div>
+    
 {% endblock %}

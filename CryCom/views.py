@@ -40,3 +40,5 @@ def register_page(request):
             messages.error(request, form.errors)
     return render(request, 'register.html', {'form': form})
 
+def logo(request):
+    pass
