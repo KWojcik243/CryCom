@@ -22,6 +22,8 @@ def login_page(request):
             login(request, user)
             return redirect('home')
     return render(request, 'login.html')
+    
+    
 
 
 def register_page(request):
