@@ -1,8 +1,3 @@
-
-// function submitForm(){
-//     console.log("hej");
-// }
-
 function Page(){
     return (
         <div className="login">
@@ -31,5 +26,3 @@ function Page(){
 ReactDOM.render(
     <Page />,
     document.getElementById("root"))
-
-// ReactDOM.render(<h1>hejka</h1>), document.getElementById("root"))
