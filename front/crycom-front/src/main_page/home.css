@@ -54,6 +54,17 @@ body{
 	top:1px;
 } 
 
+.options-box{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: 15px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: hide;
+}
+
 /* .nav-button:hover {
     background-color:#002ead;
     transition: 0.7s;
