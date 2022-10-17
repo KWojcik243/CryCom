@@ -1,9 +1,13 @@
 // import ReactDOM from "react-dom"
 // import Nav from "../components/nav.js"
-function Page(){
+import {useNavigate} from 'react-router-dom'
+import logo from './btc-logo.png'
+import user from './user.jpg'
+import './home.css';
+export default function Page(){
     let settins_status=true;
+    const navigate = useNavigate()
     function settingsShow(e){
-
         console.log(settins_status);
         settins_status = !settins_status
         {settins_status ? document.getElementById("op-box").style.display = "none" :
@@ -12,11 +16,13 @@ function Page(){
     return (
         <div>
              <div className="navbar">
-                <img className="logo"src="btc-logo.png"></img>
-                <button className="nav-button">HOME</button>
+                <img className="logo"src={logo}></img>
+                <button className="nav-button" onClick={()=>{
+                    navigate('/login')
+                }}>HOME</button>
                 <button className="nav-button">ROOMS</button>
                 <button className="nav-button">BLOG</button>
-                <img className="user"src="user.jpg" onClick={settingsShow}></img>
+                <img className="user"src={user} onClick={settingsShow}></img>
             </div>
             <div className="options-box" id="op-box">
                 <p>Settings</p>
@@ -25,15 +31,3 @@ function Page(){
         </div>
     )
 }
-function footer(){
-    return(
-        <div>
-            
-        </div>
-    )
-}
-
-ReactDOM.render(
-    // <Nav />,
-    <Page />,
-    document.getElementById("root"))

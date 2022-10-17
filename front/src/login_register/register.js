@@ -1,9 +1,11 @@
-function Page(){
+import logo from './bitcoin-reg.jpg'
+import './login.css'
+export default function Register(){
     return (
         <div className="login">
             <form>
                 <div className="register-box">
-                    <img className="login-box-img" src="./bitcoin-reg.jpg" alt="fge"></img>
+                    <img className="login-box-img" src={logo} alt="fge"></img>
                         <p className="login-text">
                             Register
                             
@@ -19,18 +21,9 @@ function Page(){
                             </input>
                             <a className="forgot" >Already have an account?</a>
                             <button className="login-button" type="submit">REGISTER</button>
-                            {/* <p className="already-have">
-                                Create a new account
-                            </p> */}
                         </p>
                 </div>
             </form>
         </div>
     )
 }
-
-ReactDOM.render(
-    <Page />,
-    document.getElementById("root"))
-
-// ReactDOM.render(<h1>hejka</h1>), document.getElementById("root"))
