@@ -1,11 +1,13 @@
 // import ReactDOM from "react-dom"
 // import Nav from "../components/nav.js"
 function Page(){
-    let settins_status=true
+    let settins_status=true;
     function settingsShow(e){
 
         console.log(settins_status);
         settins_status = !settins_status
+        {settins_status ? document.getElementById("op-box").style.display = "none" :
+                          document.getElementById("op-box").style.display = "block"};
     }
     return (
         <div>
@@ -15,15 +17,19 @@ function Page(){
                 <button className="nav-button">ROOMS</button>
                 <button className="nav-button">BLOG</button>
                 <img className="user"src="user.jpg" onClick={settingsShow}></img>
-            </div> 
-            <div className="options-box">
+            </div>
+            <div className="options-box" id="op-box">
                 <p>Settings</p>
                 <p>Log out</p>
             </div>
+        </div>
+    )
+}
+function footer(){
+    return(
+        <div>
             
         </div>
-       
-        
     )
 }
 
