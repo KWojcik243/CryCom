@@ -2,14 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter,Routes, Route} from 'react-router-dom'
-import Page from './main_page/home'
+import Nav from './components/nav'
+import Footer from './components/footer'
+import Home from './main_page/home'
 import Login from './login_register/login'
 import Register from './login_register/register'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='*' element={<Page />}></Route>
+        <Route path='*' element={
+          <div>
+            <Nav />
+            <Home />
+            <Footer />
+          </div>
+        }></Route>
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
       </Routes>
