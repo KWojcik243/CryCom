@@ -1,17 +1,19 @@
 import './home.css';
 export default function Home(){
     return(
-        <div className='page'>
-            <div className='blog-box'>
-                hakuna matata
+        <div>
+            <div className='crypto-piece'>
+                <div className='table-of-changes'>
+                </div>
+                <div className='crypto-flex'>
+                    <div className='crypto-changes-box'>
+                    </div>
+                    <div className='crypto-changes-box crypto-changes-box-worst'>
+                    </div>
+                </div>
             </div>
-            <div className='crypto-flex'>
-                <div className='crypto-changes-box'>
-                    jak cudownie to brzmi
-                </div>
-                <div className='crypto-changes-box'>
-                    waka waka
-                </div>
+            <div className="blog-box">
+                Blog
             </div>
         </div>
     )

@@ -20,15 +20,16 @@ export default function Footer() {
                     <p>FQ</p>
                 </div>
                 <div className='footer-div'>
+                    <p>Any questions?</p>
+                    <input placeholder='E-mail'></input>
+                    <textarea className="contact-message" placeholder="Your message"></textarea>
                 </div>
             </div>
             <div className='wraper-rights'>
                 <div className='footer-rights'>
-                    ©Kacper Wojcik - All rights reserved
+                    ©CryCom - All rights reserved
                 </div>
             </div>
-            
         </div>
-        
     )
 }

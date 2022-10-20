@@ -1,21 +1,38 @@
-.page{
+.crypto-piece{
     display: flex;
-}
-.blog-box{
-    width: 400px;
-    height: 400px;
-    background: white;
     margin: 20px;
+}
+.table-of-changes{
+    width: 100%;
+    height: 380px;
+    background: white;
+    margin-right: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .crypto-flex{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 .crypto-changes-box{
-    width: 400px;
+    margin-right: 20px;
+    width: 100%;
     height: 180px;
     background: white;
-    margin: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.crypto-changes-box-worst{
+    margin-bottom: 0px;
+}
+
+.blog-box{
+    background-color: white;
+    height: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

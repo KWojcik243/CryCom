@@ -6,9 +6,8 @@ export default function Register(){
             <form>
                 <div className="register-box">
                     <img className="login-box-img" src={logo} alt="fge"></img>
-                        <p className="login-text">
-                            Register
-                            
+                        <div className="login-body">
+                            <p className="login-text">Register</p>
                             <input className="login-input" placeholder="First Name" name="fName">
                             </input>
                             <input className="login-input" placeholder="Last Name" name="lName">
@@ -21,7 +20,7 @@ export default function Register(){
                             </input>
                             <a className="forgot" >Already have an account?</a>
                             <button className="login-button" type="submit">REGISTER</button>
-                        </p>
+                        </div>
                 </div>
             </form>
         </div>

@@ -10,6 +10,12 @@ p{
     width: 100%;
     padding: 0 0 4px 0;
 }
+textarea.contact-message{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
 .paragrah-start{
     margin-left: 4px;
     margin-bottom: 0px;
@@ -21,11 +27,11 @@ p{
 .footer{
     background: white;
     height: auto;
-    /* margin-bottom: 0; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px -3px 8px;
+    font-family: 'Archivo', sans-serif;
 }
 .footer-div{
     /* background-color: blue; */

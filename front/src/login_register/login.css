@@ -27,13 +27,15 @@ body{
     object-position: 40%;
 }
 
-.login-text{
+.login-body{
     display: flex;
-    font-family: 'Archivo', sans-serif;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     margin: 50px auto;
-    font-size: 60;
+}
+.login-text{
+    font-family: 'Archivo', sans-serif;
+    font-size: 60px;
 }
 .login-input{
     height: 60px;
@@ -44,12 +46,13 @@ body{
     /* box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px; */
     border-radius: 6px;
     flex-direction: column;
-    align-items: center; 
-    font-size: 30;
+    align-items: center;
+    font-size: 30px;
 }
 .forgot{
     margin-top: 40px;
-    font-size: 30;
+    font-size: 30px;
+    font-family: 'Archivo', sans-serif;
 }
 /* body {
     font-family: 'Open Sans', sans-serif;
@@ -91,6 +94,7 @@ body{
     position:absolute;
     font-size: 30px;
     margin-top: 480px;
+    font-family: 'Archivo', sans-serif;
 }
 .already-have{
     position:absolute;

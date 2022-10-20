@@ -5,8 +5,8 @@ export default function Login(){
             <form method="POST" action="{% url 'login' %}">
                 <div className="login-box">
                     <img className="login-box-img" src={logo} alt="fge"></img>
-                        <p className="login-text">
-                            Login
+                        <div className="login-body">
+                            <p className="login-text">Login</p>
                             <input className="login-input" placeholder="Login" name="login">
                             </input>
                             <input className="login-input" placeholder="Password" name="password">
@@ -16,7 +16,7 @@ export default function Login(){
                             <p className="create-new-account">
                                 Create a new account
                             </p>
-                        </p>
+                        </div>
                 </div>
             </form>
         </div>
