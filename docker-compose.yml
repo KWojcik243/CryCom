@@ -9,7 +9,7 @@ services:
       - .:/app
     depends_on:
       - postgres
-      - influx
+      - influxdb
     env_file:
       - ./.env
 
@@ -22,12 +22,13 @@ services:
     env_file:
       - ./.env
 
-  influx:
+  influxdb:
     image: influxdb:latest
+    restart: always
     ports: 
       - '8086:8086'
     volumes:
-      - influxdb-storage:/var/lib/influxdb
+      - influxdb-storage:/var/lib/influxdb2
     env_file:
       - ./.env
 

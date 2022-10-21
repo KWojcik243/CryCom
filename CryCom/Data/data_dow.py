@@ -1,6 +1,5 @@
 from pycoingecko import CoinGeckoAPI
 
-
 class CryptoData:
     cg = CoinGeckoAPI()
     def get_historical_data(self, crypto_id:str, currency:str = 'usd', days:int = 1) -> list:
