@@ -1,6 +1,7 @@
 from pycoingecko import CoinGeckoAPI
 from pandas import DataFrame
 from datetime import datetime
+
 class CryptoData:
     cg = CoinGeckoAPI()
 
