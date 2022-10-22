@@ -1,15 +1,6 @@
-from dataclasses import dataclass
-from datetime import datetime
-from operator import index
-from pydoc import Doc, doc
-from dateutil.tz import tzutc
-from datetime import tzinfo
 from decouple import config
-from dateutil.parser import parse
-import os
-from influxdb_client import InfluxDBClient, Point, WritePrecision
+from influxdb_client import InfluxDBClient
 from influxdb_client.client.write_api import SYNCHRONOUS
-from numpy import rec
 from pandas import DataFrame
 
 class InfluxCl:
