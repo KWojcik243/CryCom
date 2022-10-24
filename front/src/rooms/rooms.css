@@ -1,0 +1,32 @@
+.main-box{
+    display: flex;
+    min-height: 500px;
+    min-width: auto;
+    margin: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 20px;
+}
+
+.single-room{
+    display: flex;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 100%;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+}
+.room-image{
+    margin: 20px;
+    object-fit: cover;
+    width: 200px;
+    height: 150px;
+    object-position: 40%;
+}
+.room-name{
+    font-family: 'Archivo', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+

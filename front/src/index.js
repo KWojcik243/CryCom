@@ -7,6 +7,7 @@ import Footer from './components/footer'
 import Home from './main_page/home'
 import Login from './login_register/login'
 import Register from './login_register/register'
+import Rooms from  './rooms/rooms'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -20,6 +21,12 @@ ReactDOM.render(
         }></Route>
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
+        <Route path='/rooms' element={
+          <div>
+           <Nav />
+           <Rooms />
+           <Footer />
+          </div>} />
       </Routes>
 
     </BrowserRouter>

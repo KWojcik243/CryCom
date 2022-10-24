@@ -41,7 +41,7 @@ class CryptoData:
             dict: Dictionary that returns {Coin name:{currency, value}}
         """
         return self.cg.get_price(ids=crypto_ids, vs_currencies=currency)
-    
+
     def get_supported_list_coins_ids(self) -> list:
         """Method for getting list of ids supported by CoinGecko
 
