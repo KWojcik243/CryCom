@@ -8,6 +8,7 @@ import Home from './main_page/home'
 import Login from './login_register/login'
 import Register from './login_register/register'
 import Rooms from  './rooms/rooms'
+import SpecyficRoom from './rooms/specyfic_room';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -25,6 +26,12 @@ ReactDOM.render(
           <div>
            <Nav />
            <Rooms />
+           <Footer />
+          </div>} />
+          <Route path='/rooms/1' element={
+          <div>
+           <Nav />
+           <SpecyficRoom/>
            <Footer />
           </div>} />
       </Routes>

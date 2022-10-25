@@ -57,17 +57,11 @@ body{
 .options-box{
     position: absolute;
     margin-top: -15px;
-    /* margin-left: 100%; */
-    /* float: right; */
     margin-right: auto;
+    right: 20px;
     width: 200px;
     height: 200px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: none;
 }
-
-/* .nav-button:hover {
-    background-color:#002ead;
-    transition: 0.7s;
-} */

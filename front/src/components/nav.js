@@ -18,7 +18,9 @@ export default function Nav(){
                 <button className="nav-button" onClick={()=>{
                     navigate('/login')
                 }}>HOME</button>
-                <button className="nav-button">ROOMS</button>
+                <button className="nav-button" onClick={()=>{
+                    navigate('/rooms')
+                }}>ROOMS</button>
                 <button className="nav-button">BLOG</button>
                 <img className="user"src={user} alt='menu-logo' onClick={settingsShow}></img>
             </div>
