@@ -36,6 +36,7 @@
 }
 .conversation{
     height: 100%;
+    margin: 20px;
     background-color: cyan;
 }
 
