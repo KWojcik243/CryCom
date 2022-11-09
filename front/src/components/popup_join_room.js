@@ -8,12 +8,14 @@ export default class PopUpJoinRoom extends Component {
     return (
       <div className="dark-background">
          <div className="box">
+            <div className="box-bar">
+              <p className="title">Join room</p>
               <span className="close" onClick={this.handleClick}>&times;    </span>
+            </div>
               <form className="create_room">
-                <p>Join room</p>
-                <input className="" placeholder="Room token" name="room_name" required/>
-                <input className="" title="Leave empty, if room not require a password" placeholder="Room password" name="room_name"/>
-                <button type="submit">Join</button>
+                <input className="room-input" placeholder="Room token" name="room_token" required/>
+                <input className="room-input" type="password" title="If empty, room will not require a password" placeholder="Room password" name="room_password"/>
+                <button className="btn-sub" type="submit">Join</button>
               </form>
           </div>
       </div>
