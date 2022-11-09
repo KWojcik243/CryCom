@@ -21,13 +21,13 @@ export default function Rooms(){
         <div className="main-box">
             <div>
                 <div className="btn" >
-                <button onClick={CreateRoomShow}>Create room</button>
-                <button onClick={JoinRoomShow}>Join room</button>
+                <button className="btn-style btn-left" onClick={CreateRoomShow}>Create room</button>
+                <button className="btn-style btn-right" onClick={JoinRoomShow}>Join room</button>
                 </div>
                 {visibleCreateRoom ? <PopUpCreateRoom toggle={CreateRoomShow} /> : null}
                 {visibleJoinRoom ? <PopUpJoinRoom toggle={JoinRoomShow} /> : null}
             </div>
-            <div className="main-box">
+            <div className="main-box main-box-rooms">
                 <div className="single-room" onClick={goToRoom}>
                     <img className='room-image' src={Brak} />
                     <p className="room-name">Nazwa Pokoju</p>
