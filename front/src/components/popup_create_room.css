@@ -23,6 +23,7 @@
 .close{
     margin-left: auto;
     cursor: pointer;
+    width: 20px;
 }
 
 form.create_room{
@@ -32,4 +33,71 @@ form.create_room{
 .checkbox{
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.box-bar{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.title{
+    /* position: absolute;
+    margin-left: 40%; */
+    /* margin-left: auto;*/
+    font-family:Arial;
+    font-size: 25px; 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 140px;
+}
+
+.room-input{
+    border: none;
+    border-bottom: 2px solid orange;
+    margin: 10px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.checkbox-wrapp{
+    max-width: 200px;
+}
+
+.checkbox-text{
+    font-family: Arial;
+}
+
+.btn-sub {
+    /* width: 230px;
+    height: 70px; */
+    margin: 10px;
+    box-shadow:inset 0px 1px 0px 0px #fff6af;
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color:#ffec64;
+    border-radius:6px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size: 30px;
+    font-weight:bold;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffee66;
+}
+.btn-sub:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.btn-sub {
+	position:relative;
+	top:1px;
+}
+
+.select-div{
+    padding: 10px;
 }

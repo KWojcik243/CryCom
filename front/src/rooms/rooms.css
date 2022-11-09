@@ -5,6 +5,9 @@
     margin: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    /* gap: 20px 20px; */
+}
+.main-box-rooms{
     gap: 20px 20px;
 }
 
@@ -36,4 +39,29 @@
     font-size: 20px;
     margin-bottom: 20px;
 }
+.btn{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+}
 
+.btn-style{
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 25px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.btn-right{
+    border-radius: 0px 10px 10px 0px;
+}
+
+.btn-left{
+    border-radius: 10px 0px 0px 10px;
+}
+
+.btn-style:hover{
+    background-color: #f7cbad;
+    
+}
