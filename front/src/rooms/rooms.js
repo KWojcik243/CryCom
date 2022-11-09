@@ -1,25 +1,31 @@
 import {useNavigate} from 'react-router-dom'
 import {useState} from 'react';
 import './rooms.css';
-import PopUp from "./../components/popup_create_room";
 import Brak from './brak_zdj.jpg'
+import PopUpCreateRoom from './../components/popup_create_room';
+import PopUpJoinRoom from '../components/popup_join_room';
 export default function Rooms(){
     const navigate = useNavigate()
     function goToRoom(e){
         navigate('/rooms/1')
     }
-    const [visible, setVisible] = useState(false);
-    function SettingsShow(e){
-        setVisible(!visible);
+    const [visibleCreateRoom, setVisibleCreateRoom] = useState(false);
+    const [visibleJoinRoom, setVisibleJoinRoom] = useState(false);
+    function CreateRoomShow(e){
+        setVisibleCreateRoom(!visibleCreateRoom);
+    }
+    function JoinRoomShow(e){
+        setVisibleJoinRoom(!visibleJoinRoom);
     }
     return(
         <div className="main-box">
             <div>
-                <div className="btn" onClick={SettingsShow}>
-                <button>Create room</button>
-                <button>Join room</button>
+                <div className="btn" >
+                <button onClick={CreateRoomShow}>Create room</button>
+                <button onClick={JoinRoomShow}>Join room</button>
                 </div>
-                {visible ? <PopUp toggle={SettingsShow} /> : null}
+                {visibleCreateRoom ? <PopUpCreateRoom toggle={CreateRoomShow} /> : null}
+                {visibleJoinRoom ? <PopUpJoinRoom toggle={JoinRoomShow} /> : null}
             </div>
             <div className="main-box">
                 <div className="single-room" onClick={goToRoom}>

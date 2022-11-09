@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './popup_create_room.css'
-export default class PopUp extends Component {
+export default class PopUpCreateRoom extends Component {
   handleClick = () => {
    this.props.toggle();
   };
@@ -12,7 +12,7 @@ export default class PopUp extends Component {
               <form className="create_room">
                 <p>Create room</p>
                 <input className="" placeholder="Room name" name="room_name" required/>
-                <input className="" title="If empty, room will not require a password" placeholder="Room password" name="room_name"/>
+                <input className="" type="password" title="If empty, room will not require a password" placeholder="Room password" name="room_password"/>
                 <div className="checkbox">
                   <p>Do you want to compare more then one cryptocurrency?
                   </p>
