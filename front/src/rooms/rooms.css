@@ -1,0 +1,67 @@
+.main-box{
+    display: flex;
+    min-height: 500px;
+    min-width: auto;
+    margin: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 20px 20px; */
+}
+.main-box-rooms{
+    gap: 20px 20px;
+}
+
+.single-room{
+    display: flex;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.single-room:hover {
+	filter: brightness(85%);
+}
+.single-room:active {
+	position:relative;
+	top:1px;
+}
+.room-image{
+    margin: 20px;
+    object-fit: cover;
+    width: 200px;
+    height: 150px;
+    object-position: 40%;
+}
+.room-name{
+    font-family: 'Archivo', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.btn{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+}
+
+.btn-style{
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 25px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.btn-right{
+    border-radius: 0px 10px 10px 0px;
+}
+
+.btn-left{
+    border-radius: 10px 0px 0px 10px;
+}
+
+.btn-style:hover{
+    background-color: #f7cbad;
+    
+}

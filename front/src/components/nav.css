@@ -26,9 +26,16 @@ body{
     border-radius: 90px;
     margin-left: auto;
     margin-right: 1%;
+    cursor: pointer;
+}
+.user:hover {
+	filter: brightness(85%);
+}
+.user:active {
+	position:relative;
+	top:1px;
 }
 .nav-button{
-    /* margin-left: auto; */
     background-color:white;
 	border-radius:16px;
     border: 2px solid white;
@@ -57,17 +64,32 @@ body{
 .options-box{
     position: absolute;
     margin-top: -15px;
-    /* margin-left: 100%; */
-    /* float: right; */
     margin-right: auto;
-    width: 200px;
-    height: 200px;
+    right: 20px;
+    width: 150px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     display: none;
 }
-
-/* .nav-button:hover {
-    background-color:#002ead;
-    transition: 0.7s;
-} */
+.one-option{
+    background-color: white;
+    margin-bottom: 0px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+}
+.p-wrapp:hover {
+	filter: brightness(85%);
+}
+.p-wrapp:active {
+	position: relative;
+	top:1px;
+}
+.p-wrapp{
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
