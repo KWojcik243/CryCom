@@ -13,6 +13,16 @@ services:
     env_file:
       - ./.env
 
+  frontend:
+    restart: always
+    command : npm start
+    container_name: front
+    build:
+      context: ./front/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
   redis:
     image: "redis:alpine"
 
@@ -35,27 +45,6 @@ services:
     env_file:
       - ./.env
 
-  # celery:
-  #   build: .
-  #   command: celery -A CryptoProject worker -l info
-  #   volumes:
-  #     - .:/code
-  #   depends_on:
-  #     - influxdb
-  #     - redis
-  #   env_file:
-  #     - ./.env
-
-  # celery-beat:
-  #   build: .
-  #   command: celery -A CryptoProject beat -l info
-  #   volumes:
-  #     - .:/code
-  #   depends_on:
-  #     - influxdb
-  #     - redis
-  #   env_file:
-  #     - ./.env
   celery:
     build: .
     command: celery -A CryptoProject worker -l info
