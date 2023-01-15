@@ -18,11 +18,21 @@ class InfluxCl:
         """Write data to measurement
 
         Args:
-            data (DataFrame): Data with index as date
+            data (DataFrame): Data with index as date(etc. rfc3339), and value
             measurement (str): Measurement(table) to write
         """
+
         write_api = self.client.write_api(write_options=SYNCHRONOUS)
-        write_api.write(self.bucket, record=data, data_frame_measurement_name=measurement)#,data_frame_tag_columns=['MSFT2'])
+        for i in range(len(data)):
+            # current_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+            json_body = [
+                {
+                    "measurement": measurement,
+                    "time": data.index[i],
+                    "fields": {"value" : data.iat[i, 0]}
+                    }
+            ]
+            write_api.write(bucket=config('DOCKER_INFLUXDB_INIT_BUCKET'), org=config('DOCKER_INFLUXDB_INIT_ORG'), record=json_body)
     
     def read_data(self, range_start: str, measurement: str, field: str) -> list:
         """Read data from influxDB (Actually only High)
