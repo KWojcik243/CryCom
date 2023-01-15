@@ -14,25 +14,39 @@ class InfluxCl:
     def __init__(self) -> None:
         self.client = InfluxDBClient(url='http://localhost:8086/', token=self.influxdb_token, org=self.org)
 
-    def write_data(self, data: DataFrame, measurement: str) -> None:
+    def write_data(self, data: DataFrame, measurement: str or list) -> None:
         """Write data to measurement
 
         Args:
             data (DataFrame): Data with index as date(etc. rfc3339), and value
-            measurement (str): Measurement(table) to write
+            measurement (str or list): Measurement(table) to write
         """
 
         write_api = self.client.write_api(write_options=SYNCHRONOUS)
-        for i in range(len(data)):
-            # current_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
-            json_body = [
-                {
-                    "measurement": measurement,
-                    "time": data.index[i],
-                    "fields": {"value" : data.iat[i, 0]}
-                    }
-            ]
-            write_api.write(bucket=config('DOCKER_INFLUXDB_INIT_BUCKET'), org=config('DOCKER_INFLUXDB_INIT_ORG'), record=json_body)
+        if type(measurement) == str:
+            for i in range(len(data)):
+                # current_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+                json_body = [
+                    {
+                        "measurement": measurement,
+                        "time": data.index[i],
+                        "fields": {"value" : data.iat[i, 0]}
+                        }
+                ]
+                write_api.write(bucket=config('DOCKER_INFLUXDB_INIT_BUCKET'), org=config('DOCKER_INFLUXDB_INIT_ORG'), record=json_body)
+        else:
+            for i in range(len(data)):
+                print(measurement[i])
+                print(data.index[i])
+                print(data.iat[i, 0])
+                json_body = [
+                    {
+                        "measurement": measurement[i],
+                        "time": data.index[i],
+                        "fields": {"value" : data.iat[i, 0]}
+                        }
+                ]
+                write_api.write(bucket=config('DOCKER_INFLUXDB_INIT_BUCKET'), org=config('DOCKER_INFLUXDB_INIT_ORG'), record=json_body)
     
     def read_data(self, range_start: str, measurement: str, field: str) -> list:
         """Read data from influxDB (Actually only High)
