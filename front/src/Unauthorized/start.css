@@ -1,13 +1,33 @@
 .full-site{
     /* background-color: #DFDFDF; */
     width: 100%;
-    height: 300vh;
+    height: 350vh;
+    display: flex;
+    flex-direction: column;
     /* z-index: -2; */
     /* background-image: url("../assets/ColourBackground.SVG"); */
 }
 
+.first-con{
+    width: auto;
+    height: 100vh;
+}
+
+.second-con{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
 .colour-background{
+    /* display: flex; */
     position: absolute;
+    /* width: 100vh; */
+    /* width: 3000px; */
+    height: auto;
+    max-width:100%;
+    max-height:100%;
     z-index:-1;
 }
 
@@ -163,4 +183,94 @@
     font-family: "Cabin";
     font-size: 32px;
     color: #F6470F;
+}
+
+.second-group-text{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+}
+
+.right-second-box{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.second-group{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;   
+}
+.third-group{
+    display: flex;
+    width: 100%;
+    height: 120vh;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px;
+}
+
+.title-join-com{
+    position: relative;
+    font-family: "Cabin";
+    font-size: 78px;
+    width: auto;
+}
+
+div.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.gradient-text{
+    font-family: "Cabin";
+    font-size: 40px;
+    background: linear-gradient(270deg, #FF6B00 0%, #A411EA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+div.feature .text{
+    font-family: 'Cabin';
+    width: 385px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+.join_now{
+    display: flex;
+    cursor: pointer;
+    border-radius: 45px;
+    width: 440px;
+    /* height: 200px; */
+    transition: 0.3s;
+    border: none;
+    background-color: #F7470F;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.join_now:hover{
+    box-shadow: 0px 0px 20px -8px rgba(0, 0, 0, 1);
+}
+
+p.join-now{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cabin";
+    font-size: 32px;
+    color: white;
+    height: 80px;
 }
