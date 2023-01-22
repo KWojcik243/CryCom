@@ -19,6 +19,7 @@ ReactDOM.render(
             <Home />
             <Footer /> */}
             <Start />
+            <Footer />
           </div>
         }></Route>
         <Route path='/login' element={<Login />}/>

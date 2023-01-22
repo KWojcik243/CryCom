@@ -2,32 +2,31 @@ import './footer.css';
 import Instagram from './instagram.png'
 import Github from './github-sign.png'
 import Linkedin from './linkedin.png'
+// import {FiFacebook} from 'react-icons/fi';
+import {FiLinkedin, FiFacebook, FiInstagram} from 'react-icons/fi';
+// import {FiInstagram} from 'react-icons/fi';
 export default function Footer() {
     return (
         <div>
             <div className="footer">
-                <div className='footer-div'>
-                    <p>You can find author on:</p>
-                    <ui>
-                        <li className='li-flex'><img className='footer-logo' src={Instagram} /><p className='paragrah-start'>@theovecka</p></li>
-                        <li className='li-flex'><img className='footer-logo' src={Github} /><p className='paragrah-start'>KWojcik243</p></li>
-                        <li className='li-flex'><img className='footer-logo' src={Linkedin} /><p className='paragrah-start'>kacper-wojcik243</p></li>
-                    </ui>
+                <div className='main-footer'>
+                    <div className='logo'></div>
+                    <p className='text'>CREATED BY KACPER WOJCIK</p>
+                    <div className='social'>
+                        <FiFacebook style={{fontSize: '30px'}}/>
+                        <FiLinkedin style={{fontSize: '30px'}}/>
+                        <FiInstagram style={{fontSize: '30px'}}/>
+                    </div>
                 </div>
-                <div className='footer-div'>
-                    <p>Privacy</p>
-                    <p>Contact</p>
-                    <p>FQ</p>
-                </div>
-                <div className='footer-div'>
-                    <p>Any questions?</p>
-                    <input placeholder='E-mail'></input>
-                    <textarea className="contact-message" placeholder="Your message"></textarea>
-                </div>
-            </div>
-            <div className='wraper-rights'>
-                <div className='footer-rights'>
-                    ©CryCom - All rights reserved
+                <div className='secondary-footer'>
+                    <div>
+                        <p className='text'>© 2023 CryCom. All rights reserved.</p>
+                    </div>
+                    <div>
+                        <button className='ref'><p className='text'>Privacy</p></button>
+                        <button className='ref'><p className='text'>Contact</p></button>
+                        <button className='ref'><p className='text'>FAQ</p></button>
+                    </div>
                 </div>
             </div>
         </div>
