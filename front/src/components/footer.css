@@ -32,6 +32,7 @@ p{
     display: flex;
     gap: 30px;
 }
+/* .test */
 
 .main-footer{
     display: flex;
@@ -56,6 +57,10 @@ p{
     cursor: pointer;
     background-color: transparent;
     border: none;
+}
+
+a, a:visited{
+    color: black;
 }
 
 

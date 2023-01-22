@@ -13,9 +13,15 @@ export default function Footer() {
                     <div className='logo'></div>
                     <p className='text'>CREATED BY KACPER WOJCIK</p>
                     <div className='social'>
-                        <FiFacebook style={{fontSize: '30px'}}/>
-                        <FiLinkedin style={{fontSize: '30px'}}/>
-                        <FiInstagram style={{fontSize: '30px'}}/>
+                         <a href='https://www.facebook.com/TheOvecka/'>
+                            <FiFacebook style={{fontSize: '30px'}}/>
+                        </a>
+                        <a href='https://www.linkedin.com/in/kacper-wojcik243/'>
+                            <FiLinkedin style={{fontSize: '30px'}}/>
+                        </a>
+                        <a href='https://www.instagram.com/theovecka/'>
+                            <FiInstagram style={{fontSize: '30px'}}/>
+                        </a>
                     </div>
                 </div>
                 <div className='secondary-footer'>
