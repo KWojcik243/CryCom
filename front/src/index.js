@@ -4,8 +4,8 @@ import {BrowserRouter,Routes, Route} from 'react-router-dom'
 import Nav from './components/nav'
 import Footer from './components/footer'
 import Home from './main_page/home'
-import Login from './login_register/login'
-import Register from './login_register/register'
+import Login from './Unauthorized/login'
+import Register from './Unauthorized/register'
 import Rooms from  './rooms/rooms'
 import SpecyficRoom from './rooms/specyfic_room';
 import Start from './Unauthorized/start';
