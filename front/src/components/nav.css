@@ -4,28 +4,36 @@ body{
 }
 .navbar{
     display: flex;
+    justify-content: space-around;
     width: 100%;
     height: 80px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    /* justify-content: center; */
+    background: linear-gradient(270deg, #F7470F 0%, #A411EA 100%);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     align-items: center;
     margin-bottom: 20px;
 }
+.profil{
+    height: 120px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
 .logo{
     margin-left: 1%;
-    max-width:80%;
-    max-height:80%;
+    max-width:70%;
+    max-height:70%;
 }
-
+.button-box{
+    display: flex;
+    gap: 24px;
+}
 .user{
     /* position: absolute; */
     display: flex;
-    max-width:80%;
-    max-height:80%;
+    max-width:70%;
+    max-height:70%;
     border-radius: 90px;
-    margin-left: auto;
-    margin-right: 1%;
     cursor: pointer;
 }
 .user:hover {
@@ -36,20 +44,16 @@ body{
 	top:1px;
 }
 .nav-button{
-    background-color:white;
+    background-color:transparent;
 	border-radius:16px;
-    border: 2px solid white;
+    border: none;
 	display:inline-block;
 	cursor:pointer;
-	color:black;
-	font-family:Arial;
-	font-size:22px;
-    margin-left: 1%;
-	padding:15px 43px;
-	text-decoration:none;
-	text-shadow:0px 0px 1px black;
+	color:white;
+	font-family:'Cabin';
+	font-size:24px;
 }
-.nav-button:hover {
+/* .nav-button:hover {
     transition: .5s;
 	border: 4px solid black;
     border-color: orange;
@@ -59,14 +63,15 @@ body{
     background-color: orange;
 	position:relative;
 	top:1px;
-}
+} */
 
 .options-box{
-    position: absolute;
+    /* position: absolute;
     margin-top: -15px;
     margin-right: auto;
     right: 20px;
-    width: 150px;
+    width: 150px; */
+    margin-top: 150px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;

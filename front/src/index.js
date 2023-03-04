@@ -24,6 +24,12 @@ ReactDOM.render(
         }></Route>
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
+        <Route path='/home' element={
+          <div>
+            <Nav />
+            <Footer />
+          </div>
+        }></Route>
         <Route path='/rooms' element={
           <div>
            <Nav />
