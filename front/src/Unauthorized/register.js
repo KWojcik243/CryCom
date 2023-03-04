@@ -7,27 +7,27 @@ export default function Register(){
                             <p className="register-text login-text"><b>CryCom!</b></p>
                             <form>
                                 <div className="group-first">      
-                                    <input type="text" required/>
+                                    <input className="register-input-f" type="text" required/>
                                     <span className="highlight"></span>
-                                    <span className="bar"></span>
+                                    <span className="bar bar-color"></span>
                                     <label className="input-default-text"><b>Nickname</b></label>
                                 </div>
                                 <div className="group-first">      
-                                    <input type="text" required/>
+                                    <input className="register-input-f" type="text" required/>
                                     <span className="highlight"></span>
-                                    <span className="bar"></span>
+                                    <span className="bar bar-color"></span>
                                     <label className="input-default-text"><b>Email</b></label>
                                 </div>
                                 <div className="group-first">      
-                                    <input type="password" required/>
+                                    <input className="register-input-f" type="password" required/>
                                     <span className="highlight"></span>
-                                    <span className="bar"></span>
+                                    <span className="bar bar-color"></span>
                                     <label className="input-default-text"><b>Password</b></label>
                                 </div>
                                 <div className="group last-group">      
-                                    <input type="password" required/>
+                                    <input className="register-input-f" type="password" required/>
                                     <span className="highlight"></span>
-                                    <span className="bar"></span>
+                                    <span className="bar bar-color"></span>
                                     <label className='input-default-text'><b>Confirm password</b></label>
                                 </div>
                             </form>

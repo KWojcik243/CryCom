@@ -180,11 +180,17 @@ transition:0.2s ease all;
 }
 
 /* active state */
-input:focus ~ label, input:valid ~ label 		{
+input.login-input-f:focus ~ label, input.login-input-f:valid ~ label 		{
 top:-15px;
 font-size:14px;
 color:#A411EA;
 }
+
+input.register-input-f:focus ~ label, input.register-input-f:valid ~ label 		{
+    top:-15px;
+    font-size:14px;
+    color:#F6470F;
+    }
 
 /* BOTTOM BARS ================================= */
 .bar 	{ display:block; width:300px; }
@@ -199,6 +205,10 @@ transition:0.2s ease all;
 -moz-transition:0.2s ease all; 
 -webkit-transition:0.2s ease all;
 }
+.bar-color:before, .bar-color:after{
+    background:#F6470F; 
+}
+
 .bar:before {
 left:50%;
 }

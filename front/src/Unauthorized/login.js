@@ -8,13 +8,13 @@ export default function Login(){
                         <p className="welcome-text"><b>Welcome to CryCom!</b></p>
                         <form>
                             <div className="group-first">      
-                                <input className="login" type="text" required/>
+                                <input className="login-input-f" type="text" required/>
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                                 <label className="input-default-text"><b>Email</b></label>
                             </div>
                             <div className="group">      
-                                <input className="login" type="text" required/>
+                                <input className="login-input-f" type="text" required/>
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                                 <label className='input-default-text'><b>Password</b></label>
