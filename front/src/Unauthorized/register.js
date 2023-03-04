@@ -4,17 +4,6 @@ export default function Register(){
         <div className="login">
                 <div className="login-box">
                         <div className="login-body">
-                            {/* <p className="login-text">Register</p> */}
-                            {/* <input className="login-input" placeholder="First Name" name="fName">
-                            </input>
-                            <input className="login-input" placeholder="Last Name" name="lName">
-                            </input>
-                            <input className="login-input" placeholder="Email" name="email">
-                            </input>
-                            <input className="login-input" placeholder="Password" name="password">
-                            </input>
-                            <input className="login-input" placeholder="Confirm Password" name="cPassword">
-                            </input> */}
                             <p className="register-text login-text"><b>CryCom!</b></p>
                             <form>
                                 <div className="group-first">      

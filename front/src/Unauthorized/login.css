@@ -73,9 +73,9 @@ body{
     font-family: "Cabin";
     font-size: 24px;
 }
-/* .register-button{
+.register-button{
     background-color:#F6470F;
-} */
+}
 .login-button:hover {
 	background-color:#710da0;
 }
@@ -84,13 +84,13 @@ body{
 	top:1px;
 }
 
-/* .register-button:hover {
+.register-button:hover {
 	background-color:#af330a;
 }
 .register-button:active {
 	position:relative;
 	top:1px;
-} */
+}
 
 .or{
     font-family: "Cabin";
@@ -116,9 +116,9 @@ body{
     color: #F6470F;
     cursor:pointer;
 }
-/* .back-sign-in{
+.back-sign-in{
     color:#710da0;
-} */
+}
 
 
 .already-have{
