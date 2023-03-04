@@ -2,10 +2,9 @@ import './login.css'
 export default function Register(){
     return (
         <div className="login">
-            <form>
-                <div className="register-box">
+                <div className="login-box">
                         <div className="login-body">
-                            <p className="login-text">Register</p>
+                            {/* <p className="login-text">Register</p> */}
                             {/* <input className="login-input" placeholder="First Name" name="fName">
                             </input>
                             <input className="login-input" placeholder="Last Name" name="lName">
@@ -16,11 +15,44 @@ export default function Register(){
                             </input>
                             <input className="login-input" placeholder="Confirm Password" name="cPassword">
                             </input> */}
-                            <a className="forgot" >Already have an account?</a>
-                            <button className="login-button" type="submit">REGISTER</button>
+                            <p className="register-text login-text"><b>CryCom!</b></p>
+                            <form>
+                                <div className="group-first">      
+                                    <input type="text" required/>
+                                    <span className="highlight"></span>
+                                    <span className="bar"></span>
+                                    <label className="input-default-text"><b>Nickname</b></label>
+                                </div>
+                                <div className="group-first">      
+                                    <input type="text" required/>
+                                    <span className="highlight"></span>
+                                    <span className="bar"></span>
+                                    <label className="input-default-text"><b>Email</b></label>
+                                </div>
+                                <div className="group-first">      
+                                    <input type="password" required/>
+                                    <span className="highlight"></span>
+                                    <span className="bar"></span>
+                                    <label className="input-default-text"><b>Password</b></label>
+                                </div>
+                                <div className="group last-group">      
+                                    <input type="password" required/>
+                                    <span className="highlight"></span>
+                                    <span className="bar"></span>
+                                    <label className='input-default-text'><b>Confirm password</b></label>
+                                </div>
+                            </form>
+                            <button className="login-button register-button" type="submit">Join now</button>
+                            <div className='or'>
+                                <div className='divider'></div>
+                                <p><b>or</b></p>
+                                <div className='divider'></div>
+                            </div>
+                            <p className="create-new-account back-sign-in">
+                                <b>Sign in</b>
+                            </p>
                         </div>
                 </div>
-            </form>
         </div>
     )
 }

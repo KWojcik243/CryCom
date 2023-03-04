@@ -31,6 +31,9 @@ body{
     font-family: 'Cabin';
     font-size: 50px;
 }
+.register-text{
+    margin-bottom: 20px;
+}
 .welcome-text{
     font-family: 'Cabin';
     font-size: 20px;
@@ -70,6 +73,9 @@ body{
     font-family: "Cabin";
     font-size: 24px;
 }
+/* .register-button{
+    background-color:#F6470F;
+} */
 .login-button:hover {
 	background-color:#710da0;
 }
@@ -77,6 +83,14 @@ body{
 	position:relative;
 	top:1px;
 }
+
+/* .register-button:hover {
+	background-color:#af330a;
+}
+.register-button:active {
+	position:relative;
+	top:1px;
+} */
 
 .or{
     font-family: "Cabin";
@@ -102,6 +116,11 @@ body{
     color: #F6470F;
     cursor:pointer;
 }
+/* .back-sign-in{
+    color:#710da0;
+} */
+
+
 .already-have{
     position:absolute;
     font-size: 30px;
@@ -132,6 +151,9 @@ margin-bottom:30px;
 }
 .group{
     position:relative; 
+}
+.last-group{
+    margin-bottom: 20px;
 }
 input 				{
 font-size:18px;
