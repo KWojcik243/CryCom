@@ -92,6 +92,7 @@
 .compare-main-box{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 100px;
     align-items: center;
 }
@@ -109,6 +110,7 @@
     width: 725px;
     animation-name: title;
     animation-duration: 0.9s;
+    /* overflow-wrap: break-word; */
 }
 
 .additional-text{
@@ -292,3 +294,7 @@ border:4px solid #f4f4f4;
 *::-webkit-scrollbar-button {
 display:none;
 }
+
+/* @media (max-width: 576px) {
+    
+} */

@@ -252,3 +252,12 @@ to 	{ width:0; background:transparent; }
     from { background:white; }
 to 	{ width:0; background:transparent; }
 }
+
+@media (max-width: 576px) {
+    body{
+        background-color: white;
+    }
+    .login-box{
+        box-shadow: none;
+    }
+}

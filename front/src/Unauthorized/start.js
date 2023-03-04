@@ -19,14 +19,14 @@ export default function Start(){
                         <button className='text-button'><p className='specific-text-menu'><b>Rooms</b></p></button>
                         <button className='text-button'><p className='specific-text-menu'><b>About</b></p></button>
                     </div>
-                    <button className='sign-in-button'><p className='sign-in'>Sign in<FaSignInAlt style={{fontSize: '30px'}}/></p></button>
+                    <button className='sign-in-button' onClick={event =>  window.location.href='/login'}><p className='sign-in'>Sign in<FaSignInAlt style={{fontSize: '30px'}}/></p></button>
                 </div>
                 <div className='compare-main-box'>
                     <div className='left-main-box'>
                         <p className='title'><b>Compare cryptocurrencies with your friends now</b></p>
                         <p className='additional-text'>Use your investment skill - compare over 180 different cryptocurrencies in private rooms, and be the king of your own destiny. Available online and on android for free.</p>        
                         <div className='left-main-box-div-buttons'>
-                            <button className='left-main-box-button left-button'><p className='start-now'>Start now</p></button>
+                            <button className='left-main-box-button left-button' onClick={event =>  window.location.href='/register'}><p className='start-now'>Start now</p></button>
                             <button className='left-main-box-button right-button'><p className='contact'>Contact</p></button>
                         </div>       
                     </div>
@@ -74,13 +74,8 @@ export default function Start(){
                                 <p className='text'>Add your friends and define witch crypto you will compare</p>
                             </div>
                         </div>
-                        
-                        {/* <div className='right-second-box'>
-                            <p className='title'><b>Interactive diagrams for a huge amount of cryptocurrencies</b></p>
-                            <p className='additional-text'>You can see price at a specific moment in history thanks to modern designed charts. Just select the time interval and hover your mouse over a point to get more information.</p>
-                        </div> */}
                     </div>
-                    <button className='join_now'><p className='join-now'>Join now!</p></button>
+                    <button className='join_now' onClick={event =>  window.location.href='/register'}><p className='join-now'>Join now!</p></button>
                 </div>
             </div>
         </div>
