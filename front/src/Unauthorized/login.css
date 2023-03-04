@@ -209,14 +209,14 @@ animation:inputHighlighter 0.3s ease;
 
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
-    from { background:#A411EA; }
+    from { background:white; }
 to 	{ width:0; background:transparent; }
 }
 @-moz-keyframes inputHighlighter {
-    from { background:#A411EA; }
+    from { background:white; }
 to 	{ width:0; background:transparent; }
 }
 @keyframes inputHighlighter {
-    from { background:#A411EA; }
+    from { background:white; }
 to 	{ width:0; background:transparent; }
 }
