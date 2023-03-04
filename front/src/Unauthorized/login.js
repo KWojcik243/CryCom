@@ -20,14 +20,14 @@ export default function Login(){
                                 <label className='input-default-text'><b>Password</b></label>
                             </div>
                         </form>
-                        <a className="forgot"><b>Forgot Password?</b></a>
+                        <a className="forgot" onClick={event =>  window.location.href='/change_password'}><b>Forgot Password?</b></a>
                         <button className="login-button" type="submit">Sign in</button>
                         <div className='or'>
                             <div className='divider'></div>
                             <p><b>or</b></p>
                             <div className='divider'></div>
                         </div>
-                        <p className="create-new-account">
+                        <p className="create-new-account" onClick={event =>  window.location.href='/register'}>
                             <b>Create account</b>
                         </p>
                     </div>

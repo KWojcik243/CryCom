@@ -37,7 +37,7 @@ export default function Register(){
                                 <p><b>or</b></p>
                                 <div className='divider'></div>
                             </div>
-                            <p className="create-new-account back-sign-in">
+                            <p className="create-new-account back-sign-in" onClick={event =>  window.location.href='/login'}>
                                 <b>Sign in</b>
                             </p>
                         </div>
