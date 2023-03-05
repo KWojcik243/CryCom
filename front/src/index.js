@@ -9,6 +9,8 @@ import Register from './Unauthorized/register'
 import Rooms from  './rooms/rooms'
 import SpecyficRoom from './rooms/specyfic_room';
 import Start from './Unauthorized/start';
+import "./index.css";
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

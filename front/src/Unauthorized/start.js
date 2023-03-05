@@ -7,9 +7,8 @@ import TmpFeatureIcon from '../assets/TmpFeatureIcon.SVG'
 import {FaSignInAlt} from 'react-icons/fa';
 export default function Start(){
     return(
-        <div className='full-site'>
+        <div className='full-site' style={{backgroundImage: `url(${ColourBackground})`}}>
             <div className='first-con'>
-                <img className='colour-background' src={ColourBackground}></img>
                 <div className='nav'>
                     <div className='logo'></div>
                     <div className='text-menu'>
@@ -30,12 +29,11 @@ export default function Start(){
                             <button className='left-main-box-button right-button'><p className='contact'>Contact</p></button>
                         </div>       
                     </div>
-                    <img src={Iphone} alt="React Logo" />
+                    <img src={Iphone} alt="Iphone" />
                 </div>
             </div>
-            <div className='second-con'>
+            <div className='second-con' style={{backgroundImage: `url(${LineWaves})`}}>
                 <div className='second-group'>
-                    <img className='colour-background' src={LineWaves}></img>
                     <div className='second-group-text'>
                         <img src={RoundedGraphs}></img>
                         <div className='right-second-box'>

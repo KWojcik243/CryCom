@@ -5,13 +5,22 @@ p{
 .footer{
     display: flex;
     background: #F0F0F0;
-    height: auto;
+    height: 230px;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     border-top: 4px solid;
     border-image:  linear-gradient(270deg, #FF6B00 0%, #A411EA 100%) 1;
     padding: 20px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: auto !important;
+    clear: both;
+}
+
+.footer-space {
+    height: 230px !important;
 }
 
 .logo{
@@ -23,7 +32,7 @@ p{
 
 .text{
     font-family: "Cabin";
-    font-size: 30px;
+    font-size: 15pt;
     color: rgba(100, 116, 139, 1);
 
 }
@@ -44,7 +53,7 @@ p{
 
 .secondary-footer{
     display: flex;
-    width: 100%;
+    width: calc(100% - 40px);
     justify-content: space-between;
     align-items: center;
 

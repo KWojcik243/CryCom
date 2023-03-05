@@ -12,3 +12,14 @@ code {
     monospace;
 }
 
+#root, #root > div, body {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+#root > div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
