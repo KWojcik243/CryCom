@@ -1,9 +1,9 @@
 import './specyfic_room.css'
+import TableFriends from '../components/table-friends'
 export default function SpecyficRoom(){
     return(
         <div className='crypto-room'>
-            <div className='table-of-crypto'>
-            </div>
+            <TableFriends />
             <div className='chat-flex'>
                 <p className="chat-name">Chat</p>
                 <div className='chat'>
