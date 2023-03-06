@@ -29,6 +29,7 @@ ReactDOM.render(
         <Route path='/home' element={
           <div>
             <Nav />
+            <Home />
             <Footer />
           </div>
         }></Route>

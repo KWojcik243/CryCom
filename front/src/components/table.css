@@ -1,0 +1,47 @@
+    
+  table {
+    overflow: hidden;
+    width: 800px;
+    height: 200px;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    border-collapse:collapse;
+    font-family:'Cabin';
+    background-color: white;
+  }
+    
+  td {
+    text-align: center;
+  }
+  .upper-header-color-p{
+    background-color: #A411EA;
+  }
+  .upper-header-color-o{
+    background-color: #EA5F11;
+  }
+  .upper-header{
+    font-size: 20px;
+    height: 40px;
+    color: white;
+    vertical-align: middle
+  }
+  .lower-header-color-p{
+    background-color: #472066;
+  }
+  .lower-header-color-o{
+    background-color: #663520;
+  }
+  .lower-header{
+    color: white;
+  }
+
+  tr:nth-child(2n+4) {
+    background-color: #EEEEEE;
+  }
+
+  .diff-green{
+    color: #035916;
+  }
+  .diff-red{
+    color: #760000;
+  }
