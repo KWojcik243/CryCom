@@ -1,9 +1,11 @@
 import './specyfic_room.css'
 import TableFriends from '../components/table-friends'
+import {IoMdSend} from 'react-icons/io';
 const data = [
     { name: "Anom", message: "Hi Maj ", date: "09.03.2023 16:59"},
     { name: "Maj", message: "Hi Anom", date: "09.03.2023 17:00"},
-    { name: "Anom", message: "Whats up", date: "09.03.2023 17:00"},
+    { name: "Anom", message: "Whats upsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", date: "09.03.2023 17:00"},
+    { name: "Maj", message: "Hi Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", date: "09.03.2023 17:00"},
   ]
 
 export default function SpecyficRoom(){
@@ -26,14 +28,14 @@ export default function SpecyficRoom(){
                                                 <p>{val.name} {val.date}</p>
                                             </div>
                                         <div className='diff-mess-box'>
-                                            <p>{val.message}</p>
+                                            <p style={{display: 'inline-block'}}>{val.message}</p>
                                         </div>
                                     </div>
                                  </div>
                                  : 
                                  <div className='our-mess'>
                                     <div className='mess'>
-                                        <div className='info'>
+                                        <div className='info' style={{alignSelf:'flex-end'}}>
                                             <p>{val.date}</p>
                                         </div>
                                         <div className='our-mess-box'>
@@ -46,11 +48,10 @@ export default function SpecyficRoom(){
                         })}
                         </div>
                         <div className="message-submit-box">
-                            {/* <textarea className="chat-text-message" placeholder="Your message"></textarea> */}
                             <div className='chat-text-message' contentEditable="true">
                                 <p className='text-area' data-placeholder="Aaa"></p>
                             </div>
-                            <button className='send-message'>Send</button>
+                            <IoMdSend style={{fontSize: '30px', alignSelf: 'flex-end', marginBottom:'3px', color: '#FE2517'}}/>
                         </div>
                     </div>
                 </div>

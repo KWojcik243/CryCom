@@ -13,7 +13,7 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: 587px;
     align-items: center;
     padding: 20px;
     background: white;
@@ -26,9 +26,11 @@
 }
 .chat{
     width: 400px;
-    height: 100%;
+    height: 587px;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    gap: 10px;
 }
 .conversation{
     height: 100%;
@@ -36,12 +38,14 @@
     font-family:'Cabin';
     display: flex;
     flex-direction: column;
-    gap: 5px
+    gap: 5px;
+    overflow: auto;
 }
 
 .message-submit-box{
     display: flex;
     bottom: 0px;
+    gap: 10px;
 }
 
 .send-message{
@@ -83,7 +87,12 @@
     border-radius: 15px;
     padding: 10px;
     color: white;
-    width: max-content;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* width: max-content; */
+    width: fit-content;
+    max-width: 70%;
+    word-break: break-all
 }
 .our-mess{
     display:flex;
@@ -98,6 +107,9 @@
     border-radius: 15px;
     padding: 10px;
     align-self: flex-end;
+    max-width: 70%;
+    /* overflow-wrap: break-word; */
+    word-break: break-all;
 }
 
 .messeges{
@@ -112,4 +124,5 @@
     font-size: 14px;
     color: #a09c9c;
 }
+
 
