@@ -1,7 +1,7 @@
     
   table {
     overflow: hidden;
-    width: 800px;
+    width: 100%;
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     border-collapse:collapse;
@@ -11,6 +11,12 @@
     
   td {
     text-align: center;
+  }
+  .main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
   }
   .upper-header-color-p{
     background-color: #A411EA;

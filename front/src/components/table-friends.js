@@ -16,7 +16,6 @@ const data = [
   export default class TableFriends extends Component {
     render() {
         return (
-        <div>
             <table>
                 <th colspan="5" className="upper-header upper-header-color-p">RoomName  </th>
                 
@@ -39,7 +38,6 @@ const data = [
                     )
                 })}
             </table>
-        </div>
         )
     }
 }
