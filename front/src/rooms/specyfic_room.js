@@ -14,7 +14,7 @@ export default function SpecyficRoom(){
             <div className='crypto-room'>
                 <TableFriends />
                 <div className='chat-flex'>
-                    <p className="chat-name">Chat</p>
+                    <p className="chat-name">Room chat</p>
                     <div className='chat'>
                         <div className="conversation">
                         {data.map((val, key) => {
