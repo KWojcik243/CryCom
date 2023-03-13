@@ -4,7 +4,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: auto;
+    width: 400px;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -45,9 +45,9 @@ form.create_room{
     /* position: absolute;
     margin-left: 40%; */
     /* margin-left: auto;*/
-    font-family:Arial;
+    font-family:'Cabin';
     font-size: 25px; 
-    position: absolute; 
+    position: absolute;
     left: 0; 
     right: 0; 
     margin-left: auto; 

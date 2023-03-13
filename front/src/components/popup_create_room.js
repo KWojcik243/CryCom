@@ -5,7 +5,17 @@ export default class PopUpCreateRoom extends Component {
   
   state = {
     visible: false
-  }
+  };
+  
+  data = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
+    
+    
+  
+  
   handleClick = () => {
    this.props.toggle();
   };
@@ -39,14 +49,28 @@ export default class PopUpCreateRoom extends Component {
               <span className="close" onClick={this.handleClick}>&times;    </span>
             </div>
               <form className="create_room">
-                <input className="room-input" placeholder="Room name" name="room_name" required/>
-                <input className="room-input" type="password" title="If empty, room will not require a password" placeholder="Room password" name="room_password"/>
+                {/* <input className="room-input" placeholder="Room name" name="room_name" required/>
+                <input className="room-input" type="password" title="If empty, room will not require a password" placeholder="Room password" name="room_password"/> */}
+                
+                <div className="group-first">      
+                    <input className="login-input-f" type="text" required/>
+                    <span className="highlight"></span>
+                    <span className="bar"></span>
+                    <label className="input-default-text"><b>Email</b></label>
+                </div>
+                <div className="group">      
+                    <input className="login-input-f" type="text" required/>
+                    <span className="highlight"></span>
+                    <span className="bar"></span>
+                    <label className='input-default-text'><b>Password</b></label>
+                </div>
                 {this.state.visible?
                 <div className="select-div">
                   <Select
-                  styles={this.customStyles} 
-                  data={this.myData}
+                  styles={this.customStyles}
+                  options={this.data}
                   selectMultiple={true}
+                  isMulti
                   touchUi={false}
                   />
                 </div>
