@@ -1,5 +1,5 @@
 import './specyfic_room.css'
-import TableFriends from '../components/table-friends'
+import TableFriends from '../../components/table-friends'
 import {IoMdSend} from 'react-icons/io';
 const data = [
     { name: "Anom", message: "Hi Maj ", date: "09.03.2023 16:59"},

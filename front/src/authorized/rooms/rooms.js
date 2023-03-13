@@ -2,8 +2,8 @@ import {useNavigate} from 'react-router-dom'
 import {useState} from 'react';
 import './rooms.css';
 import Brak from './brak_zdj.jpg'
-import PopUpCreateRoom from './../components/popup_create_room';
-import PopUpJoinRoom from '../components/popup_join_room';
+import PopUpCreateRoom from '../../components/popup_create_room';
+import PopUpJoinRoom from '../../components/popup_join_room';
 export default function Rooms(){
     const navigate = useNavigate()
     function goToRoom(e){
