@@ -1,19 +1,24 @@
+import React, {useContext} from "react"
+import AuthContext from "../context/AuthContext"
+
 export default function Login(){
+    let {loginUser} = useContext(AuthContext)
+    
     return (
         <div className="login">
-            <form method="POST" action="{% url 'login' %}">
+            <form onSubmit={loginUser}>
                 <div className="login-box">
                     <div className="login-body">
                         <p className="login-text"><b>Login</b></p>
                         <p className="welcome-text"><b>Welcome to CryCom!</b></p>
                         <div className="group-first">      
-                            <input className="login-input-f" type="text" name="email" required/>
+                            <input className="login-input-f" type="email" name="email" required/>
                             <span className="highlight"></span>
                             <span className="bar"></span>
                             <label className="input-default-text"><b>Email</b></label>
                         </div>
                         <div className="group">      
-                            <input className="login-input-f" type="text" name="password" required/>
+                            <input className="login-input-f" type="password" name="password" required/>
                             <span className="highlight"></span>
                             <span className="bar"></span>
                             <label className='input-default-text'><b>Password</b></label>

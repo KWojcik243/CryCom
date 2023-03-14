@@ -11,19 +11,28 @@ import SpecyficRoom from './authorized/rooms/specyfic_room';
 import Start from './Unauthorized/start';
 import PrivateRoute from './utils/PrivateRoute';
 import "./index.css";
+import {AuthProvider} from './context/AuthContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path='*' element={
-          <PrivateRoute component={<div>
-            <Start />
-            <Footer />
-          </div>}>
-          </PrivateRoute>
+          <AuthProvider>
+              <PrivateRoute component={<div>
+                <Start />
+                <Footer />
+                </div>}>
+              </PrivateRoute>
+          </AuthProvider>
         }></Route>
-        <Route path='/login' element={<Login />}/>
+
+        <Route path='/login' element={
+          <AuthProvider>
+            <Login />
+          </AuthProvider>
+        
+        }/>
         <Route path='/register' element={<Register />}/>
         <Route path='/home' element={
           <div>

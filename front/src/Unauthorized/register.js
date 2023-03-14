@@ -13,7 +13,7 @@ export default function Register(){
                                     <label className="input-default-text"><b>Nickname</b></label>
                                 </div>
                                 <div className="group-first">      
-                                    <input className="register-input-f" type="text" required/>
+                                    <input className="register-input-f" type="email" required/>
                                     <span className="highlight"></span>
                                     <span className="bar bar-color"></span>
                                     <label className="input-default-text"><b>Email</b></label>

@@ -1,9 +1,10 @@
 import {Route, Navigate} from 'react-router-dom'
+import { useContext } from 'react';
+import AuthContext from '../context/AuthContext';
 
 const PrivateRoute = ({component, ...rest}) => {
-    console.log('Privete rout')
-    const authenticated = true; 
-    if(authenticated){
+    let {user} = useContext(AuthContext);
+    if(user){
         return component
     }else{
         return <Navigate to="/login"/>
