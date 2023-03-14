@@ -6,20 +6,18 @@ export default function Login(){
                     <div className="login-body">
                         <p className="login-text"><b>Login</b></p>
                         <p className="welcome-text"><b>Welcome to CryCom!</b></p>
-                        <form>
-                            <div className="group-first">      
-                                <input className="login-input-f" type="text" required/>
-                                <span className="highlight"></span>
-                                <span className="bar"></span>
-                                <label className="input-default-text"><b>Email</b></label>
-                            </div>
-                            <div className="group">      
-                                <input className="login-input-f" type="text" required/>
-                                <span className="highlight"></span>
-                                <span className="bar"></span>
-                                <label className='input-default-text'><b>Password</b></label>
-                            </div>
-                        </form>
+                        <div className="group-first">      
+                            <input className="login-input-f" type="text" name="email" required/>
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                            <label className="input-default-text"><b>Email</b></label>
+                        </div>
+                        <div className="group">      
+                            <input className="login-input-f" type="text" name="password" required/>
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                            <label className='input-default-text'><b>Password</b></label>
+                        </div>
                         <a className="forgot" onClick={event =>  window.location.href='/change_password'}><b>Forgot Password?</b></a>
                         <button className="login-button" type="submit">Sign in</button>
                         <div className='or'>
