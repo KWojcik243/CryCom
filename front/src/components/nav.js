@@ -1,9 +1,11 @@
 import {useNavigate} from 'react-router-dom'
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import logo from '../authorized/main_page/btc-logo.png'
 import user from '../authorized/main_page/user.jpg'
+import AuthContext from "../context/AuthContext"
 import './nav.css';
 export default function Nav(){
+    let {logoutUser} = useContext(AuthContext)
     const navigate = useNavigate()
     const [visible, setVisible] = useState(true);
     function SettingsShow(e){
@@ -39,7 +41,7 @@ export default function Nav(){
                         <div className="p-wrapp"> <p className="one-option">Settings</p> </div>
                         <div className="p-wrapp"> <p className="one-option">Contact</p> </div>
                         <div className="p-wrapp"> <p className="one-option">Privacy</p> </div>
-                        <div className="p-wrapp"> <p className="one-option">Log out</p> </div>
+                        <div className="p-wrapp" onClick={logoutUser}> <p className="one-option">Log out</p> </div>
                     </div>
                 </div>
                 

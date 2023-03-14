@@ -18,41 +18,58 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path='*' element={
-          <AuthProvider>
-              <PrivateRoute component={<div>
-                <Start />
-                <Footer />
-                </div>}>
-              </PrivateRoute>
-          </AuthProvider>
-        }></Route>
-
+          <div>
+            <Start />
+            <Footer />
+          </div>}>
+        </Route>
         <Route path='/login' element={
           <AuthProvider>
             <Login />
           </AuthProvider>
-        
         }/>
-        <Route path='/register' element={<Register />}/>
+        <Route path='/register' element={
+          <AuthProvider>
+            <Register />
+          </AuthProvider>
+        }/>
         <Route path='/home' element={
-          <div>
-            <Nav />
-            <Home />
-            <Footer />
-          </div>
+          <AuthProvider>
+            <PrivateRoute component={
+              <div>
+                <Nav />
+                <Home />
+                <Footer />
+              </div>}>
+            </PrivateRoute>
+          </AuthProvider>
+          
         }></Route>
+
+        
         <Route path='/rooms' element={
-          <div>
-           <Nav />
-           <Rooms />
-           <Footer />
-          </div>} />
+          <AuthProvider>
+            <PrivateRoute component={
+              <div>
+                <Nav />
+                <Rooms />
+                <Footer />
+              </div>} >
+            </PrivateRoute>
+          </AuthProvider>
+          
+          }></Route>
           <Route path='/rooms/1' element={
-          <div>
-           <Nav />
-           <SpecyficRoom/>
-           <Footer />
-          </div>} />
+            <AuthProvider>
+              <PrivateRoute component={
+                <div>
+                  <Nav />
+                  <SpecyficRoom />
+                  <Footer />
+                </div>} >
+              </PrivateRoute>
+            </AuthProvider>
+          }></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
