@@ -29,14 +29,35 @@ export const AuthProvider = ({children}) => {
             setAuthTokens(data)
             setUser(jwt_decode(data.access))
             localStorage.setItem('authTokens', JSON.stringify(data))
-            navigate('/')
+            navigate('/home')
+        }else{
+            alert('Something went wrong!')
+        }
+    }
+
+    let registerUser = async(e) => {
+        console.log("Problem z register")
+        let response = await fetch('http://localhost:8000/api/register/', {
+            method:'POST',
+            headers:{
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify({'username':e.target.username.value,'email':e.target.email.value, 'password':e.target.password.value, 'password2':e.target.password2.value})
+        })
+        let data = await response.json()
+
+        console.log(response)
+        if (response.status === 201){
+            let ev = new Event({target:{email: e.target.username.value, password: e.target.password.value}})
+            // ev.target.email.value = e.target.username.value
+            // ev.target.password.value = e.target.password.value
+            loginUser(ev)
         }else{
             alert('Something went wrong!')
         }
     }
 
     let logoutUser = () => {
-        console.log('logout')
         setAuthTokens(null)
         setUser(null)
         localStorage.removeItem('authTokens')
@@ -73,6 +94,7 @@ export const AuthProvider = ({children}) => {
         authTokens:authTokens,
         loginUser:loginUser,
         logoutUser:logoutUser,
+        registerUser:registerUser
 
     }
 
