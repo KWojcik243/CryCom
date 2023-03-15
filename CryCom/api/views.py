@@ -1,8 +1,11 @@
-from django.http import JsonResponse
 from rest_framework.response import Response
+from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
+from . import serializers
+
+from django.contrib.auth.models import User
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -25,4 +28,9 @@ def getRoutes(request):
         '/api/token/refresh',
     ]
     return Response(routes)
+
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = serializers.RegisterSerializer
 

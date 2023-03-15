@@ -36,14 +36,14 @@ export const AuthProvider = ({children}) => {
     }
 
     let logoutUser = () => {
+        console.log('logout')
         setAuthTokens(null)
-        setUser(jwt_decode(null))
+        setUser(null)
         localStorage.removeItem('authTokens')
         navigate('/login')
     }
 
     let updateToken = async(e) => {
-        console.log('Update')
         let response = await fetch('http://localhost:8000/api/token/refresh/', {
             method:'POST',
             headers:{

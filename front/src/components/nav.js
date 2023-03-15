@@ -1,11 +1,11 @@
 import {useNavigate} from 'react-router-dom'
 import {useState, useContext} from 'react';
 import logo from '../authorized/main_page/btc-logo.png'
-import user from '../authorized/main_page/user.jpg'
+import user_img from '../authorized/main_page/user.jpg'
 import AuthContext from "../context/AuthContext"
 import './nav.css';
 export default function Nav(){
-    let {logoutUser} = useContext(AuthContext)
+    let {user, logoutUser} = useContext(AuthContext)
     const navigate = useNavigate()
     const [visible, setVisible] = useState(true);
     function SettingsShow(e){
@@ -34,9 +34,9 @@ export default function Nav(){
                 </div>
                 
                 <div className='profil'>
-                    <img className="user"src={user} alt='menu-logo' onClick={SettingsShow}></img>
+                    <img className="user"src={user_img} alt='menu-logo' onClick={SettingsShow}></img>
                     <div className="options-box" id="op-box" style={visible ? null : { display: "block" }}>
-                        <p className="one-option">Nickname</p>
+                        <p className="one-option">Nickname {user.username}</p>
                         <div className='divider'></div>
                         <div className="p-wrapp"> <p className="one-option">Settings</p> </div>
                         <div className="p-wrapp"> <p className="one-option">Contact</p> </div>
