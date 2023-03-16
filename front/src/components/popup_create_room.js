@@ -29,13 +29,17 @@ export default class PopUpCreateRoom extends Component {
     control: (base, state) => ({
       ...base,
       boxShadow: state.isFocused ? 0 : 0,
+      border: '2px solid #D1D1D1',
+      fontFamily: 'Cabin',
+      marginTop: '15px',
       borderColor: state.isFocused
-        ? '#ed6d0c'
+        ? '#A411EA'
         : base.borderColor,
       '&:hover': {
         borderColor: state.isFocused
-          ? '#ed6d0c'
+          ? '#A411EA'
           : base.borderColor,
+      
       }
     })
   };
@@ -45,23 +49,20 @@ export default class PopUpCreateRoom extends Component {
       <div className="dark-background">
          <div className="box">
             <div className="box-bar">
-              <p className="title">Create room</p>
+              <p className="title-cr"><b>Create room</b></p>
               <span className="close" onClick={this.handleClick}>&times;    </span>
             </div>
               <form className="create_room">
-                {/* <input className="room-input" placeholder="Room name" name="room_name" required/>
-                <input className="room-input" type="password" title="If empty, room will not require a password" placeholder="Room password" name="room_password"/> */}
-                
                 <div className="group-first">      
                     <input className="login-input-f" type="text" required/>
                     <span className="highlight"></span>
-                    <span className="bar"></span>
-                    <label className="input-default-text"><b>Email</b></label>
+                    <span className="bar-cr"></span>
+                    <label className="input-default-text"><b>Room name</b></label>
                 </div>
                 <div className="group">      
-                    <input className="login-input-f" type="text" required/>
+                    <input className="login-input-f" type="password" required/>
                     <span className="highlight"></span>
-                    <span className="bar"></span>
+                    <span className="bar-cr"></span>
                     <label className='input-default-text'><b>Password</b></label>
                 </div>
                 {this.state.visible?
@@ -76,13 +77,10 @@ export default class PopUpCreateRoom extends Component {
                 </div>
                 : <div></div>}
                 <div className="checkbox">
-                  <div className="checkbox-wrapp">
-                    <p className="checkbox-text">Do you want to compare more than one cryptocurrency?
-                    </p>
-                  </div>
-                  <input onClick={this.makeVis} type="checkbox" name="One crypto type" value="True"/>
+                  <p className="checkbox-text">Do you want to compare more than one cryptocurrency?</p>
+                  <input onClick={this.makeVis} className="checkbox-input" type="checkbox" name="One crypto type" value="True"/>
                 </div>
-                <button className="btn-sub" type="submit">Create</button>
+                <button className="btn-s btn-create" type="submit">Create</button>
               </form>
           </div>
       </div>

@@ -4,6 +4,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* height: 400px; */
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -21,38 +22,49 @@
     transform: translate(-50%, -50%);
 }
 .close{
-    margin-left: auto;
+    /* margin-right: auto; */
+    top: 0;
+    right: 0;
+    scale: 3;
     cursor: pointer;
     width: 20px;
+    /* height: 40px; */
+    position: absolute;
 }
 
 form.create_room{
     display: flex;
     flex-direction: column;
+    padding: 0px 20px 20px 20px;
 }
 .checkbox{
+    font-family: "Cabin";
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.checkbox-input{
+    width: auto;
+}
+/* .checkbox-text{
 
+} */
 .box-bar{
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    padding: 20px;
 }
-.title{
-    /* position: absolute;
-    margin-left: 40%; */
-    /* margin-left: auto;*/
+.title-cr{
     font-family:'Cabin';
-    font-size: 25px; 
-    position: absolute;
+    font-size: 45px; 
+    /* position: absolute; */
     left: 0; 
     right: 0; 
     margin-left: auto; 
     margin-right: auto; 
-    width: 140px;
+    /* width: 140px; */
 }
 
 .room-input{
@@ -67,33 +79,33 @@ form.create_room{
     max-width: 200px;
 }
 
-.checkbox-text{
-    font-family: Arial;
-}
 
-.btn-sub {
-    /* width: 230px;
-    height: 70px; */
-    margin: 10px;
-    box-shadow:inset 0px 1px 0px 0px #fff6af;
-    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-    background-color:#ffec64;
-    border-radius:6px;
-    border:1px solid #ffaa22;
+.btn-s {
+    height: 65px;
+    margin-top: 40px;
+    border-radius:45px;
+    border: none;
     display:inline-block;
     cursor:pointer;
-    color:#333333;
-    font-family:Arial;
-    font-size: 30px;
-    font-weight:bold;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #ffee66;
+    color:white;
+    font-family: "Cabin";
+    font-size: 24px;
 }
-.btn-sub:hover {
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color:#ffab23;
+.btn-create{
+    background-color:#A411EA;
 }
-.btn-sub {
+.btn-join{
+    background-color:#F6470F;
+}
+.btn-join:hover{
+    background-color:#f80c0c;
+}
+
+
+.btn-create:hover {
+	background-color:#710da0;
+}
+.btn-s:active {
 	position:relative;
 	top:1px;
 }
@@ -101,3 +113,131 @@ form.create_room{
 .select-div{
     padding: 10px;
 }
+
+
+.input-default-text{
+    font-family:'Cabin';
+    color: #D1D1D1;
+    font-size: 20px;
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
+
+/* form starting stylings ------------------------------- */
+.group-first 			  { 
+    position:relative; 
+    margin-bottom:30px; 
+}
+.group{
+    position:relative; 
+}
+.last-group{
+    margin-bottom: 10px;
+}
+input 				{
+font-size:18px;
+padding:10px 10px 10px 5px;
+display:block;
+width:345px;
+border:none;
+border-bottom:3px solid #D1D1D1;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+color:#999; 
+font-size:18px;
+font-weight:normal;
+position:absolute;
+pointer-events:none;
+left:5px;
+top:10px;
+transition:0.2s ease all; 
+-moz-transition:0.2s ease all; 
+-webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input.login-input-f:focus ~ label, input.login-input-f:valid ~ label 		{
+top:-15px;
+font-size:14px;
+color:#A411EA;
+}
+
+input.register-input-f:focus ~ label, input.register-input-f:valid ~ label 		{
+    top:-15px;
+    font-size:14px;
+    color:#F6470F;
+    }
+
+/* BOTTOM BARS ================================= */
+.bar-cr 	{ display:block; width:300px; }
+.bar-cr:before, .bar-cr:after 	{
+content:'';
+height:3px; 
+width:0;
+bottom:0.01px; 
+position:absolute;
+background:#A411EA; 
+transition:0.2s ease all; 
+-moz-transition:0.2s ease all; 
+-webkit-transition:0.2s ease all;
+}
+.bar-cr-color:before, .bar-cr-color:after{
+    background:#F6470F; 
+}
+
+.bar-cr:before {
+left:50%;
+}
+.bar-cr:after {
+right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar-cr:before, input:focus ~ .bar-cr:after {
+width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+position:absolute;
+height:60%; 
+width:100px; 
+top:25%; 
+left:0;
+pointer-events:none;
+opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+-webkit-animation:inputHighlighter 0.3s ease;
+-moz-animation:inputHighlighter 0.3s ease;
+animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from { background:white; }
+to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background:white; }
+to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+    from { background:white; }
+to 	{ width:0; background:transparent; }
+}
+
+@media (max-width: 576px) {
+    body{
+        background-color: white;
+    }
+    .login-box{
+        box-shadow: none;
+    }
+}
+

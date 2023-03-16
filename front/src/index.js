@@ -49,13 +49,13 @@ ReactDOM.render(
         
         <Route path='/rooms' element={
           <AuthProvider>
-            <PrivateRoute component={
+            {/* <PrivateRoute component={ */}
               <div>
                 <Nav />
                 <Rooms />
                 <Footer />
-              </div>} >
-            </PrivateRoute>
+              </div> 
+            {/* </PrivateRoute> */}
           </AuthProvider>
           
           }></Route>

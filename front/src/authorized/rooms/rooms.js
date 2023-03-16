@@ -21,8 +21,8 @@ export default function Rooms(){
         <div className="main-box">
             <div>
                 <div className="btn" >
-                <button className="btn-style btn-left" onClick={CreateRoomShow}>Create room</button>
-                <button className="btn-style btn-right" onClick={JoinRoomShow}>Join room</button>
+                    <button className="btn-style btn-left" onClick={CreateRoomShow}>Create room</button>
+                    <button className="btn-style btn-right" onClick={JoinRoomShow}>Join room</button>
                 </div>
                 {visibleCreateRoom ? <PopUpCreateRoom toggle={CreateRoomShow} /> : null}
                 {visibleJoinRoom ? <PopUpJoinRoom toggle={JoinRoomShow} /> : null}

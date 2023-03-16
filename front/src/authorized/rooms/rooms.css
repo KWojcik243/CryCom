@@ -35,17 +35,19 @@
     object-position: 40%;
 }
 .room-name{
-    font-family: 'Archivo', sans-serif;
+    font-family: 'Cabin';
     font-size: 20px;
     margin-bottom: 20px;
 }
 .btn{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    background-color: white
+    /* padding: ; */
 }
 
 .btn-style{
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
     border: none;
     font-size: 25px;
@@ -53,15 +55,18 @@
     transition: 0.3s;
 }
 
-.btn-right{
-    border-radius: 0px 10px 10px 0px;
-}
+ .btn-right{
+    border-radius: 0px 20px 20px 0px;
+} 
 
 .btn-left{
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 20px 0px 0px 20px;
+} 
+
+.btn-left:hover{
+    background-color: #d6adf7;
+}
+.btn-right:hover{
+    background-color: #f7d5ad;
 }
 
-.btn-style:hover{
-    background-color: #f7cbad;
-    
-}
