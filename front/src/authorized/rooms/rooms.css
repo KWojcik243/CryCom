@@ -1,11 +1,10 @@
 .main-box{
     display: flex;
-    min-height: 500px;
     min-width: auto;
+    max-width: 1920px;
     margin: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    /* gap: 20px 20px; */
 }
 .main-box-rooms{
     gap: 20px 20px;
@@ -13,6 +12,7 @@
 
 .single-room{
     display: flex;
+    height: 250px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: white;
