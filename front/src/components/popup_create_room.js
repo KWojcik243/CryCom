@@ -3,9 +3,6 @@ import Select from 'react-select';
 import './popup_create_room.css'
 export default class PopUpCreateRoom extends Component {
   
-  // stateVis = {
-  //   visible: false
-  // };
   
   data = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -26,17 +23,26 @@ export default class PopUpCreateRoom extends Component {
   }
     
   createRoom = async(e) => {
+    
     e.preventDefault()
     const { selectedOptions } = this.state;
     let selected = selectedOptions.map(o => o.value).join(",")
-    
-    let response = await fetch('http://localhost:8000/api', {
+    console.log(selected)
+    let response = await fetch('http://localhost:8000/api/create_group/', {
         method:'POST',
         headers:{
             'Content-type':'application/json'
         },
-        body:JSON.stringify({'room_name':e.target.room_name.value,'password':e.target.password.value, "selected": selected})
+        body:JSON.stringify({'name':e.target.room_name.value,'password':e.target.password.value, "crypto_type": selected})
     })
+
+    let data = await response.json()
+    console.log(response)
+    if (response.status === 201){
+
+    }else{
+        alert('Something went wrong!')
+    }
   }
   
   handleClick = () => {
@@ -101,12 +107,10 @@ export default class PopUpCreateRoom extends Component {
                   isMulti
                   touchUi={false}
                   />
-                  {selectedOptions.map(o => <p>{o.value}</p>)}
-                  
                 </div>
                 : <div></div>}
                 <div className="checkbox">
-                  <p className="checkbox-text">Do you want to compare more than one cryptocurrency?</p>
+                  <p className="checkbox-text">Do you want to choose cryptocurrency to compare?</p>
                   <input onClick={this.makeVis} className="checkbox-input" type="checkbox" name="One crypto type" value="True"/>
                 </div>
                 <button className="btn-s btn-create" type="submit">Create</button>

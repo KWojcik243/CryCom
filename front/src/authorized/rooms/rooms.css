@@ -4,10 +4,13 @@
     max-width: 1920px;
     margin: 20px;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .main-box-rooms{
     gap: 20px 20px;
+    flex-direction: row;
 }
 
 .single-room{
@@ -42,8 +45,8 @@
 .btn{
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    background-color: white
-    /* padding: ; */
+    background-color: white;
+    width: auto;
 }
 
 .btn-style{

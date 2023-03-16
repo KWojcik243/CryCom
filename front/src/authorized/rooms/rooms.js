@@ -1,10 +1,41 @@
 import {useNavigate} from 'react-router-dom'
-import {useState} from 'react';
+import {useState, useEffect, useContext} from 'react';
+import AuthContext from "../../context/AuthContext"
 import './rooms.css';
 import Brak from './brak_zdj.jpg'
 import PopUpCreateRoom from '../../components/popup_create_room';
 import PopUpJoinRoom from '../../components/popup_join_room';
 export default function Rooms(){
+    let [groups,setGroups] = useState([])
+    let {logoutUser} = useContext(AuthContext)
+    useEffect(() => {
+        getGroups()
+    }, [])
+    
+    let getGroups = async () => {
+        let response = await fetch("http://localhost:8000/api/group_members/", {
+            method:'GET',
+            headers:{
+                'Content-type':'application/json'
+            },})
+
+        let data = await response.json()
+
+        if(response.status === 200){
+            setGroups(data)
+        }else if(response.statusText === 'Unauthorized'){
+            logoutUser()
+        }
+    }
+
+    let showGroups = groups.map((item,index) => (
+        <div key={index} className="single-room">
+            <img className='room-image' src={Brak} />
+            <p className="room-name">{item.name}</p>
+        </div>
+))
+
+
     const navigate = useNavigate()
     function goToRoom(e){
         navigate('/rooms/1')
@@ -35,28 +66,9 @@ export default function Rooms(){
                 <div className="single-room">
                     <img className='room-image' src={Brak} />
                     <p className="room-name">Nazwa Pokoju</p>
-                </div><div className="single-room">
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
-                </div><div className="single-room">
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
-                </div><div className="single-room">
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
-                </div><div className="single-room">
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
-                </div><div className="single-room">
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
-                </div><div className="single-room">
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
-                </div><div className="single-room">
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
                 </div>
+                {showGroups}
             </div>
+            
         </div>)
 }

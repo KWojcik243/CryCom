@@ -39,6 +39,21 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         return user
     
-class Crypto_Group(serializers.ModelSerializer):
+class CryptoGroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Crypto_Group
+        fields = ("name", "password", "crypto_type")
+    def create(self, validated_data):
+        cg = Crypto_Group.objects.create(
+            name = validated_data["name"],
+            crypto_type = validated_data["crypto_type"],
+            password = validated_data["password"]
+        ) 
+
+        cg.save()
+        return cg
+    
+class CryptoGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Crypto_Group
+        fields = ("name", "crypto_type")

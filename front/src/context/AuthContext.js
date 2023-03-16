@@ -43,7 +43,6 @@ export const AuthProvider = ({children}) => {
             },
             body:JSON.stringify({'username':e.target.username.value,'email':e.target.email.value, 'password':e.target.password.value, 'password2':e.target.password2.value})
         })
-        let data = await response.json()
 
         console.log(response)
         if (response.status === 201){
