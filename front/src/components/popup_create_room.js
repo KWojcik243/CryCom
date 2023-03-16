@@ -3,18 +3,41 @@ import Select from 'react-select';
 import './popup_create_room.css'
 export default class PopUpCreateRoom extends Component {
   
-  state = {
-    visible: false
-  };
+  // stateVis = {
+  //   visible: false
+  // };
   
   data = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' }
   ]
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false,
+      selectedOptions: [],
+    };
+  }
+
+  handleChange = (selectedOptions) => {
+    this.setState({ selectedOptions });
+  }
     
+  createRoom = async(e) => {
+    e.preventDefault()
+    const { selectedOptions } = this.state;
+    let selected = selectedOptions.map(o => o.value).join(",")
     
-  
+    let response = await fetch('http://localhost:8000/api', {
+        method:'POST',
+        headers:{
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify({'room_name':e.target.room_name.value,'password':e.target.password.value, "selected": selected})
+    })
+  }
   
   handleClick = () => {
    this.props.toggle();
@@ -45,6 +68,7 @@ export default class PopUpCreateRoom extends Component {
   };
   
   render() {
+    const { selectedOptions } = this.state;
     return (
       <div className="dark-background">
          <div className="box">
@@ -52,15 +76,15 @@ export default class PopUpCreateRoom extends Component {
               <p className="title-cr"><b>Create room</b></p>
               <span className="close" onClick={this.handleClick}>&times;    </span>
             </div>
-              <form className="create_room">
+              <form onSubmit={this.createRoom} className="create_room">
                 <div className="group-first">      
-                    <input className="login-input-f" type="text" required/>
+                    <input className="login-input-f" type="text" name="room_name" required/>
                     <span className="highlight"></span>
                     <span className="bar-cr"></span>
                     <label className="input-default-text"><b>Room name</b></label>
                 </div>
                 <div className="group">      
-                    <input className="login-input-f" type="password" required/>
+                    <input className="login-input-f" type="password" name="password" required/>
                     <span className="highlight"></span>
                     <span className="bar-cr"></span>
                     <label className='input-default-text'><b>Password</b></label>
@@ -68,12 +92,17 @@ export default class PopUpCreateRoom extends Component {
                 {this.state.visible?
                 <div className="select-div">
                   <Select
+                  name="select"
                   styles={this.customStyles}
                   options={this.data}
                   selectMultiple={true}
+                  value={selectedOptions}
+                  onChange={this.handleChange}
                   isMulti
                   touchUi={false}
                   />
+                  {selectedOptions.map(o => <p>{o.value}</p>)}
+                  
                 </div>
                 : <div></div>}
                 <div className="checkbox">

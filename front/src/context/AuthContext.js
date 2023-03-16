@@ -36,7 +36,6 @@ export const AuthProvider = ({children}) => {
     }
 
     let registerUser = async(e) => {
-        console.log("Problem z register")
         let response = await fetch('http://localhost:8000/api/register/', {
             method:'POST',
             headers:{
