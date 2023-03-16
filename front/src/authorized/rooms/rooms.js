@@ -59,14 +59,6 @@ export default function Rooms(){
                 {visibleJoinRoom ? <PopUpJoinRoom toggle={JoinRoomShow} /> : null}
             </div>
             <div className="main-box main-box-rooms">
-                <div className="single-room" onClick={goToRoom}>
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
-                </div>
-                <div className="single-room">
-                    <img className='room-image' src={Brak} />
-                    <p className="room-name">Nazwa Pokoju</p>
-                </div>
                 {showGroups}
             </div>
             

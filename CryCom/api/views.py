@@ -46,9 +46,10 @@ class CryptoGroupView(generics.CreateAPIView):
 def getGroupsMembers(request):
     user = request.user
     print(user.id)
-    print(Group_Members.objects.all()[0].id)
-    groups = Group_Members.objects.filter(user_id=4)
-    groups = Crypto_Group.objects.filter(id=groups[0].id)
+    print(Group_Members.objects.all().values_list('id', flat=True).values('id'))
+    groups = Group_Members.objects.filter(user_id=4).values_list('id', flat=True).values('id')
+    print(groups[0]["id"])
+    groups = Crypto_Group.objects.filter(id=groups[0]["id"])
     serializer = serializers.CryptoGroupSerializer(groups, many=True)
     return Response(serializer.data)
 
