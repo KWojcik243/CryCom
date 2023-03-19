@@ -9,6 +9,9 @@
     width: auto;
     height: auto;
     min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-size: contain; */
 }
 
 .second-con{
@@ -91,10 +94,9 @@
     padding: 0px 30px;
     color: white;
 }
-.logo{
+.logo-start{
     width: 65px;
     height: 65px;
-    background-color: #0068f0;
 }
 
 .compare-main-box{

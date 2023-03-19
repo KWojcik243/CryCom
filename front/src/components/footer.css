@@ -23,11 +23,9 @@ p{
     height: 230px !important;
 }
 
-.logo{
+.logo-footer{
     width: 65px;
     height: 65px;
-    background-color: #0068f0;
-    /* margin: 20px; */
 }
 
 .text{

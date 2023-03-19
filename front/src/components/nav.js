@@ -1,6 +1,6 @@
 import {useNavigate} from 'react-router-dom'
 import {useState, useContext} from 'react';
-import logo from '../authorized/main_page/btc-logo.png'
+import logo from '../assets/android-chrome-192x192.png'
 import user_img from '../authorized/main_page/user.jpg'
 import AuthContext from "../context/AuthContext"
 import './nav.css';

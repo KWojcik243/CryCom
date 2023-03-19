@@ -1,15 +1,11 @@
 import './footer.css';
-import Instagram from './instagram.png'
-import Github from './github-sign.png'
-import Linkedin from './linkedin.png'
-// import {FiFacebook} from 'react-icons/fi';
+import logo from '../assets/android-chrome-192x192.png'
 import {FiLinkedin, FiFacebook, FiInstagram} from 'react-icons/fi';
-// import {FiInstagram} from 'react-icons/fi';
 export default function Footer() {
     return (
         <div className="footer">
             <div className='main-footer'>
-                <div className='logo'></div>
+                <img className="logo-footer"src={logo} alt='logo'></img>
                 <p className='text'>CREATED WITH &#10084;&#65039; BY KACPER WOJCIK</p>
                 <div className='social'>
                         <a href='https://www.facebook.com/TheOvecka/'>

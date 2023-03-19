@@ -1,21 +1,24 @@
 import './start.css';
+import { useNavigate } from 'react-router-dom';
 import ColourBackground from '../assets/ColourBackground.SVG'
 import LineWaves from '../assets/LineWaves.SVG'
 import Iphone from '../assets/Iphone.SVG'
 import RoundedGraphs from '../assets/RoundedGraphs.SVG'
 import TmpFeatureIcon from '../assets/TmpFeatureIcon.SVG'
+import logo from '../assets/android-chrome-192x192.png'
 import {FaSignInAlt} from 'react-icons/fa';
 export default function Start(){
+    const navigate = useNavigate()
     return(
-        <div className='full-site' style={{backgroundImage: `url(${ColourBackground})`}}>
-            <div className='first-con'>
+        <div className='full-site' >
+            <div className='first-con' style={{backgroundImage: `url(${ColourBackground})`}}>
                 <div className='nav'>
-                    <div className='logo'></div>
+                    <img className="logo-start"src={logo} alt='logo'></img>
                     <div className='text-menu'>
-                        <button className='text-button'><p className='specific-text-menu'><b>Home</b></p></button>
+                        <button className='text-button' onClick={() => {navigate('/home')}}><p className='specific-text-menu'><b>Home</b></p></button>
                         <button className='text-button'><p className='specific-text-menu'><b>Blog</b></p></button>
                         <button className='text-button'><p className='specific-text-menu'><b>Analitics</b></p></button>
-                        <button className='text-button'><p className='specific-text-menu'><b>Rooms</b></p></button>
+                        <button className='text-button'onClick={() => {navigate('/rooms')}}><p className='specific-text-menu'><b>Rooms</b></p></button>
                         <button className='text-button'><p className='specific-text-menu'><b>About</b></p></button>
                     </div>
                     <button className='sign-in-button' onClick={event =>  window.location.href='/login'}><p className='sign-in'>Sign in<FaSignInAlt style={{fontSize: '30px'}}/></p></button>
