@@ -7,7 +7,7 @@ import PopUpCreateRoom from '../../components/popup_create_room';
 import PopUpJoinRoom from '../../components/popup_join_room';
 export default function Rooms(){
     let [groups,setGroups] = useState([])
-    let {logoutUser} = useContext(AuthContext)
+    let {authTokens, logoutUser} = useContext(AuthContext)
     useEffect(() => {
         getGroups()
     }, [])
@@ -16,7 +16,8 @@ export default function Rooms(){
         let response = await fetch("http://localhost:8000/api/group_members/", {
             method:'GET',
             headers:{
-                'Content-type':'application/json'
+                'Content-type':'application/json',
+                'Authorization':'Bearer ' + String(authTokens.access)
             },})
 
         let data = await response.json()
@@ -40,6 +41,7 @@ export default function Rooms(){
     function goToRoom(e){
         navigate('/rooms/1')
     }
+
     const [visibleCreateRoom, setVisibleCreateRoom] = useState(false);
     const [visibleJoinRoom, setVisibleJoinRoom] = useState(false);
     function CreateRoomShow(e){
@@ -48,6 +50,7 @@ export default function Rooms(){
     function JoinRoomShow(e){
         setVisibleJoinRoom(!visibleJoinRoom);
     }
+    
     return(
         <div className="main-box">
             <div>

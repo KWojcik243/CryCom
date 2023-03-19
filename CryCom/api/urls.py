@@ -13,5 +13,6 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('register/', views.RegisterView.as_view(), name='register'),
     path('create_group/', views.CryptoGroupView.as_view(), name='create_group'),
-    path('group_members/', views.getGroupsMembers)
+    path('group_members/', views.getGroupsMembers),
+    path('join_group/',views.CryptoJoinGroupView.as_view(), name='join_room')
 ]

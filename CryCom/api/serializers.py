@@ -53,7 +53,32 @@ class CryptoGroupSerializer(serializers.ModelSerializer):
         cg.save()
         return cg
     
-class CryptoGroupSerializer(serializers.ModelSerializer):
+class CryptoGroupGetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Crypto_Group
         fields = ("name", "crypto_type")
+
+class CryptoJoinGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Group_Members
+        fields = ("crypto_group", "user", "owner")
+    
+    def validate(self, attrs):
+        try:
+            group = Crypto_Group.objects.get(room_token=attrs['room_token'])
+            if group.password != attrs['password']:
+                raise serializers.ValidationError({"error": "Password or token didn't match."})
+        except:
+            raise serializers.ValidationError({"error": "Password or token didn't match."})
+
+        return attrs
+
+    def create(self, validated_data):
+        group = Crypto_Group.objects.get(room_token=validated_data['room_token'])
+        member = Group_Members.objects.create(
+            crypto_group_id = group.id,
+            user_id = validated_data["user_id"],
+            owner = True
+        )
+
+        return member

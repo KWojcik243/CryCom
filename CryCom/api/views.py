@@ -38,18 +38,18 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = serializers.RegisterSerializer
 
 class CryptoGroupView(generics.CreateAPIView):
-    # queryset = User.objects.all()
     serializer_class = serializers.CryptoGroupSerializer
+
+class CryptoJoinGroupView(generics.CreateAPIView):
+    serializer_class = serializers.CryptoJoinGroupSerializer
 
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 def getGroupsMembers(request):
     user = request.user
-    print(user.id)
-    print(Group_Members.objects.all().values_list('id', flat=True).values('id'))
-    groups = Group_Members.objects.filter(user_id=4).values_list('id', flat=True).values('id')
+    groups = Group_Members.objects.filter(user_id=user.id).values_list('id', flat=True).values('id')
     print(groups[0]["id"])
     groups = Crypto_Group.objects.filter(id=groups[0]["id"])
-    serializer = serializers.CryptoGroupSerializer(groups, many=True)
+    serializer = serializers.CryptoGroupGetSerializer(groups, many=True)
     return Response(serializer.data)
 

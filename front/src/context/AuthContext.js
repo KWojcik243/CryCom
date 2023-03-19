@@ -43,13 +43,15 @@ export const AuthProvider = ({children}) => {
             },
             body:JSON.stringify({'username':e.target.username.value,'email':e.target.email.value, 'password':e.target.password.value, 'password2':e.target.password2.value})
         })
-
+        let data = await response.json()
         console.log(response)
-        if (response.status === 201){
-            let ev = new Event({target:{email: e.target.username.value, password: e.target.password.value}})
+        if (response.status === 200){
+            let ev = new Event("submit", e.options)
+            ev.target = {email: e.target.username.value, password: e.target.password.value}
+            // {target:{email: e.target.username.value, password: e.target.password.value}}
             // ev.target.email.value = e.target.username.value
             // ev.target.password.value = e.target.password.value
-            loginUser(ev)
+            await loginUser(ev)
         }else{
             alert('Something went wrong!')
         }
