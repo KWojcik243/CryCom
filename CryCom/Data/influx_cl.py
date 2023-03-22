@@ -12,7 +12,7 @@ class InfluxCl:
     url = config('DOCKER_INFLUXDB_INIT_URL')
 
     def __init__(self) -> None:
-        self.client = InfluxDBClient(url='http://localhost:8086/', token=self.influxdb_token, org=self.org)
+        self.client = InfluxDBClient(url='http://localhost:8086/', token=self.influxdb_token, org=self.org, debug=False)
 
     def write_data(self, data: DataFrame, measurement: str or list) -> None:
         """Write data to measurement
@@ -25,7 +25,6 @@ class InfluxCl:
         write_api = self.client.write_api(write_options=SYNCHRONOUS)
         if type(measurement) == str:
             for i in range(len(data)):
-                # current_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
                 json_body = [
                     {
                         "measurement": measurement,
@@ -44,8 +43,8 @@ class InfluxCl:
                         "measurement": measurement[i],
                         "time": data.index[i],
                         "fields": {"value" : data.iat[i, 0]}
-                        }
-                ]
+                        }]
+                
                 write_api.write(bucket=config('DOCKER_INFLUXDB_INIT_BUCKET'), org=config('DOCKER_INFLUXDB_INIT_ORG'), record=json_body)
     
     def read_data(self, range_start: str, measurement: str, field: str) -> list:
@@ -88,4 +87,15 @@ class InfluxCl:
         """Close client
         """
         self.client.close()
-      
+
+
+# cd = CryptoData()
+# ic = InfluxCl()
+
+# list_coins = cd.get_supported_list_coins_ids()
+# data = cd.get_actual_data(list_coins)
+# for coin in  list_coins:
+#     print(coin)
+#     data = cd.get_historical_data(coin,days="10years")
+#     ic.write_data(data,coin)
+# data = cd.get_historical_data()

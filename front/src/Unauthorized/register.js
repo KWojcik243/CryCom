@@ -11,7 +11,7 @@ export default function Register(){
             <div className="login">
                     <div className="login-box">
                             <div className="login-body">
-                                <form onSubmit={registerUser}>
+                                <form onSubmit={registerUser} className="register-form">
                                     <p className="register-text login-text"><b>CryCom!</b></p>
                                     <div className="group-first">      
                                         <input className="register-input-f" type="text" name="username"required/>

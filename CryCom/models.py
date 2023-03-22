@@ -30,9 +30,18 @@ class Group_Members(models.Model):
 
 class Team_Coins(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    crypto_name = models.CharField(max_length=24)
     buy_value = models.FloatField()
-    quantity = models.FloatField()
+    amount = models.FloatField()
     actual_value = models.FloatField()
-    highest_profit = models.FloatField()
+    profit = models.FloatField()
+    buy_price = models.FloatField()
     crypto_group = models.ForeignKey(Crypto_Group, on_delete=models.CASCADE)
+
+class Biggest_Profit_Loss(models.Model):
+    name = models.CharField(max_length=30)
+    last_week_price = models.FloatField()
+    todays_price = models.FloatField()
+    difference = models.FloatField()
+
 

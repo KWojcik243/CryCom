@@ -15,7 +15,7 @@ body{
     font-family:'Cabin';
     height: 120px;
     display: flex;
-    align-items: center;
+    align-items: end;
     flex-direction: column;
     justify-content: center;
 }
@@ -53,8 +53,8 @@ body{
 	font-family:'Cabin';
 	font-size:24px;
 }
-.divider{
-    width: 100px;
+.divider-prof{
+    width: auto;
     height: 3px;
     background-color: #D1D1D1;
 }
@@ -78,20 +78,19 @@ body{
     width: 150px; */
     background: #FFFFFF;
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 30px;
+    padding: 20px;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     display: none;
     position: absolute;
-    top: 80px;
+    top: 85px;
 }
 .one-option{
     background-color: white;
     margin-bottom: 0px;
     cursor: pointer;
-    text-align: center;
     padding: 10px;
 }
 .p-wrapp:hover {
@@ -102,7 +101,9 @@ body{
 	top:1px;
 }
 .p-wrapp{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+    min-width: 150px;
     cursor: pointer;
-    text-align: center;
 }
