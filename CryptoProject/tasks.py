@@ -3,7 +3,7 @@ import os
 import sys
 from celery import shared_task
 from celery.utils.log import get_task_logger
-from pandas import DataFrame
+import pandas as pd
 
 current = os.path.dirname(os.path.realpath(__file__))
 parent = os.path.dirname(current)
@@ -64,4 +64,32 @@ def update_coins_price():
 #             coin_value.date = data.index[i]
 #             coin_value.price = data.iat[i, 0]
 #             coin_value.save()
-   
+@shared_task   
+def biggest_profit_loss_update():
+    from CryCom.models import Coins_list, Coins_Price, Biggest_Profit_Loss
+    Biggest_Profit_Loss.objects.all().delete()
+    cl = Coins_list.objects.all()
+    df = pd.DataFrame(columns=["name","last week price", "todays price", "difference"])
+    for coin in  cl:
+        now = datetime.datetime.now()
+        week_old = datetime.datetime.now() - datetime.timedelta(days=7)
+        coins_value = Coins_Price.objects.filter(coin=coin).filter(date__range=(week_old, now))
+        df2 = pd.DataFrame({"name": [coin.name],
+                    "last week price": [coins_value[0].price],
+                        "todays price": [coins_value[len(coins_value)-1].price], 
+                        "difference": [coins_value[len(coins_value)-1].price-coins_value[0].price]})
+        df = df.append(df2, ignore_index = True)
+    df = df.sort_values(by=['difference'], ascending=True)
+    for i in range(10):
+        max = Biggest_Profit_Loss()
+        min = Biggest_Profit_Loss()
+        min.name = df.iloc[i,0]
+        min.last_week_price = df.iloc[i,1]
+        min.todays_price = df.iloc[i,2]
+        min.difference = df.iloc[i,3]
+        max.name = df.iloc[-1-i,0]
+        max.last_week_price = df.iloc[-1-i,1]
+        max.todays_price = df.iloc[-1-i,2]
+        max.difference = df.iloc[-1-i,3]
+        min.save()
+        max.save()

@@ -184,6 +184,10 @@ CELERY_BEAT_SCHEDULE = {
         "task": "CryptoProject.tasks.update_coins_price",
         "schedule": crontab(minute="*/5"),
     },
+    "biggest_profit_loss_update": {
+        "task": "CryptoProject.tasks.biggest_profit_loss_update",
+        "schedule": crontab(hour="*/24"),
+    },
 }
 
 # Internationalization

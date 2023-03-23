@@ -3,12 +3,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Crypto_Value(models.Model):
-    full_name = models.CharField(max_length=20)
-    code = models.CharField(max_length=10)
-    price = models.FloatField()
-
-
 class Blog_Post(models.Model):  # Model under development
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     time = models.DateField()
