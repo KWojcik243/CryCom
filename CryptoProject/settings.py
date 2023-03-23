@@ -176,6 +176,10 @@ CELERY_BEAT_SCHEDULE = {
         "task": "CryptoProject.tasks.update_influxdb",
         "schedule": crontab(minute="*/5"),
     },
+    "update_coins_list": {
+        "task": "CryptoProject.tasks.update_coins_list",
+        "schedule": crontab(hour="*/24"),
+    },
 }
 
 # Internationalization

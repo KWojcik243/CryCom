@@ -28,7 +28,7 @@ class Group_Members(models.Model):
     owner = models.BooleanField(default=1) # 1 = If owner, 0 - in other cases
 
 class Coins_list(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True,)
 
 class Coins_Price(models.Model):
     coin = models.ForeignKey(Coins_list, on_delete=models.CASCADE)

@@ -10,6 +10,9 @@ services:
     depends_on:
       - postgres
       - influxdb
+      - celery
+      - celery-beat
+      - redis
     env_file:
       - ./.env
 
