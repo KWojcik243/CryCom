@@ -27,10 +27,17 @@ class Group_Members(models.Model):
     crypto_group = models.ForeignKey(Crypto_Group, on_delete=models.CASCADE)
     owner = models.BooleanField(default=1) # 1 = If owner, 0 - in other cases
 
+class Coins_list(models.Model):
+    name = models.CharField(max_length=30)
+
+class Coins_Price(models.Model):
+    coin = models.ForeignKey(Coins_list, on_delete=models.CASCADE)
+    date = models.DateTimeField()
+    price = models.FloatField()
 
 class Team_Coins(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    crypto_name = models.CharField(max_length=24)
+    crypto_name = models.CharField(max_length=20, default="Null")
     buy_value = models.FloatField()
     amount = models.FloatField()
     actual_value = models.FloatField()
@@ -43,5 +50,3 @@ class Biggest_Profit_Loss(models.Model):
     last_week_price = models.FloatField()
     todays_price = models.FloatField()
     difference = models.FloatField()
-
-
