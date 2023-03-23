@@ -36,4 +36,32 @@ def update_coins_list():
             coin_obj.save()
         except:
             pass
+
+@shared_task   
+def update_coins_price():
+    from CryCom.models import Coins_list, Coins_Price
+    cd = CryptoData()
+    cl = Coins_list.objects.all()
+    for coin in  cl:
+        data = cd.get_actual_data(coin.name)
+        coin_value = Coins_Price()
+        coin_value.coin = coin
+        coin_value.date = str(datetime.datetime.now())
+        coin_value.price = data[coin.name]["usd"]
+        coin_value.save()
+
+# @shared_task   
+# def update_coins_price():
+#     cd = CryptoData()
     
+#     cl = Coins_list.objects.all()
+#     for coin in  cl:
+#         print(coin.name)
+#         data = cd.get_historical_data(coin.name,days=3650)
+#         for i in range(len(data)):
+#             coin_value = Coins_Price()
+#             coin_value.coin = coin
+#             coin_value.date = data.index[i]
+#             coin_value.price = data.iat[i, 0]
+#             coin_value.save()
+   
