@@ -89,6 +89,15 @@ class CryptoBiggestProfitLossGetSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class CryptoBiggestProfitLossllDataBestGetSerializer(serializers.ModelSerializer):
+    x = serializers.DateTimeField(source="date")
+    y = serializers.FloatField(source="price")
     class Meta:
         model = Coins_Price
-        fields = "__all__"
+        fields = ("x","y")
+
+class CryptoBiggestProfitLossllDataWorstGetSerializer(serializers.ModelSerializer):
+    x = serializers.DateTimeField(source="date")
+    y = serializers.FloatField(source="price")
+    class Meta:
+        model = Coins_Price
+        fields = ("x","y")

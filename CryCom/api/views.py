@@ -56,7 +56,8 @@ def getGroupsMembers(request):
         serializer = serializers.CryptoGroupGetSerializer(groups, many=True)
         return Response(serializer.data)
     except:
-        return Response(404)
+        # return Response(404)
+        pass
 
 @api_view(['GET'])
 def CryptoBiggestProfitLossGet(request):
@@ -68,9 +69,20 @@ def CryptoBiggestProfitLossGet(request):
 @api_view(['GET'])
 def CryptoBiggestProfitLossAllDataBestGet(request):
     queryset = Biggest_Profit_Loss.objects.all().order_by('-difference')
-    coin = Coins_list.objects.filter(name=queryset[0].name)
+    coin = Coins_list.objects.get(name=queryset[0].name)
     best = Coins_Price.objects.filter(coin_id=coin)
     serializer = serializers.CryptoBiggestProfitLossllDataBestGetSerializer(best, many=True)
-    return Response(serializer.data)
-    # queryset = Biggest_Profit_Loss.objects.all().order_by('-difference')
+    return Response([
+        {"id": coin.name,
+    "color": "hsl(14, 94%, 51%)","data":serializer.data}])
+
+@api_view(['GET'])
+def CryptoBiggestProfitLossAllDataWorstGet(request):
+    queryset = Biggest_Profit_Loss.objects.all().order_by('difference')
+    coin = Coins_list.objects.get(name=queryset[0].name)
+    best = Coins_Price.objects.filter(coin_id=coin)
+    serializer = serializers.CryptoBiggestProfitLossllDataWorstGetSerializer(best, many=True)
+    return Response([
+        {"id": coin.name,
+    "color": "hsl(281, 86%, 49%)","data":serializer.data}])
 

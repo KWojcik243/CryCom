@@ -17,4 +17,5 @@ urlpatterns = [
     path('join_group/',views.CryptoJoinGroupView.as_view(), name='join_room'),
     path('difference/', views.CryptoBiggestProfitLossGet, name='difference'),
     path('actual_best/', views.CryptoBiggestProfitLossAllDataBestGet, name='actual_best'),
+    path('actual_worst/', views.CryptoBiggestProfitLossAllDataWorstGet, name='actual_worst'),
 ]

@@ -15,7 +15,7 @@ import './table.css'
         return (
         <div>
             <table>
-                <th colspan="4" className="upper-header upper-header-color-o">Top 10 biggest loss last week (USD) </th>
+                <th colSpan="4" className="upper-header upper-header-color-o">Top 10 biggest loss last week (USD) </th>
                 
                 <tr className="lower-header lower-header-color-o" >
                     <th>Name</th>

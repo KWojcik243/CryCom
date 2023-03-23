@@ -1,18 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types"
 import './table.css'
-const data = [
-    { name: "Anom", age: 19, gender: "Male" , dif:22},
-    { name: "Megha", age: 19, gender: "Female" , dif:22},
-    { name: "Subham", age: 25, gender: "Male", dif:22},
-    { name: "Anom", age: 19, gender: "Male" , dif:22},
-    { name: "Megha", age: 19, gender: "Female" , dif:22},
-    { name: "Subham", age: 25, gender: "Male", dif:22},
-    { name: "Subham", age: 25, gender: "Male", dif:22},
-    { name: "Anom", age: 19, gender: "Male" , dif:22},
-    { name: "Megha", age: 19, gender: "Female" , dif:22},
-    { name: "Subham", age: 25, gender: "Male", dif:22},
-  ]
 
   export default class TableProfit extends Component {
 
@@ -26,7 +14,7 @@ const data = [
         return (
         <div>
             <table>
-                <th colspan="4" className="upper-header upper-header-color-p">Top 10 biggest profit last week (USD) </th>
+                <th colSpan="4" className="upper-header upper-header-color-p">Top 10 biggest profit last week (USD) </th>
                 
                 <tr className="lower-header lower-header-color-p" >
                     <th>Name</th>

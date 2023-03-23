@@ -21,7 +21,6 @@ export default function Rooms(){
             },})
 
         let data = await response.json()
-
         if(response.status === 200){
             setGroups(data)
         }else if(response.statusText === 'Unauthorized'){
@@ -63,6 +62,7 @@ export default function Rooms(){
             </div>
             <div className="main-box main-box-rooms">
                 {showGroups}
+                
             </div>
             
         </div>)

@@ -9,8 +9,13 @@ export default function Home(){
     let {logoutUser} = useContext(AuthContext)
     let [data,setData] = useState([])
 
+    let [dataChartBest,setDataChartBest] = useState([])
+    let [dataChartWorst,setDataChartWorst] = useState([])
+
     useEffect(() => {
         getData()
+        getDataChartBest()
+        getDataChartWorst()
     }, [])
 
     let getData = async () => {
@@ -29,6 +34,39 @@ export default function Home(){
         }
     }
 
+    let getDataChartBest = async () => {
+        let response = await fetch("http://localhost:8000/api/actual_best/", {
+            method:'GET',
+            headers:{
+                'Content-type':'application/json',
+            },})
+
+        let data = await response.json()
+
+        if(response.status === 200){
+            setDataChartBest(data)
+        }else if(response.statusText === 'Unauthorized'){
+            logoutUser()
+        }
+
+    }
+
+    let getDataChartWorst = async () => {
+        let response = await fetch("http://localhost:8000/api/actual_worst/", {
+            method:'GET',
+            headers:{
+                'Content-type':'application/json',
+            },})
+
+        let data = await response.json()
+
+        if(response.status === 200){
+            setDataChartWorst(data)
+        }else if(response.statusText === 'Unauthorized'){
+            logoutUser()
+        }
+
+    }
     return(
         <div>
             <div className='crypto-piece'>
@@ -38,10 +76,10 @@ export default function Home(){
                 </div>
                 <div className='crypto-flex'>
                     <div className='crypto-changes-box'>
-                        <Chart/>
+                        <Chart data = {dataChartBest} colors={() => '#ff0000'}/>
                     </div>
                     <div className='crypto-changes-box crypto-changes-box-worst'>
-                        <Chart/>
+                    <Chart data = {dataChartWorst} colors={d => d.color}/>
                     </div>
                 </div>
             </div>
