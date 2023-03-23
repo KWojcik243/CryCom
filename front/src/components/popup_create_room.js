@@ -24,6 +24,28 @@ export default function PopUpCreateRoom (props) {
   let handleChange = (selectedOptions) => {
     setSelectedOptions( selectedOptions );
   }
+
+  let joinRoom = async(e) => {
+    e.preventDefault()
+    
+    let response = await fetch('http://localhost:8000/api/join_group/', {
+        method:'POST',
+        headers:{
+            'Content-type':'application/json',
+            'Authorization':'Bearer ' + String(authTokens.access)
+        },
+        body:JSON.stringify({'room_token':e.target.room_token.value,'password':e.target.password.value})
+    })
+
+    let data = await response.json()
+    console.log(response)
+    if (response.status === 201){
+
+    }else{
+        alert('Something went wrong!')
+    }
+  }
+
     
   let createRoom = async(e) => {
     e.preventDefault()
@@ -33,14 +55,14 @@ export default function PopUpCreateRoom (props) {
         method:'POST',
         headers:{
             'Content-type':'application/json',
-            'Authorization':'Bearer ' + String(authTokens().access)
+            'Authorization':'Bearer ' + String(authTokens.access)
         },
         body:JSON.stringify({'name':e.target.room_name.value,'password':e.target.password.value, "crypto_type": selected})
     })
 
     let data = await response.json()
     if (response.status === 201){
-
+        handleClick()
     }else{
         alert('Something went wrong!')
     }
