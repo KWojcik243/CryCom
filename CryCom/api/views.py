@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from . import serializers
 
 from django.contrib.auth.models import User
-from ..models import Group_Members, Crypto_Group
+from ..models import Biggest_Profit_Loss, Group_Members, Crypto_Group
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -47,9 +47,19 @@ class CryptoJoinGroupView(generics.CreateAPIView):
 # @permission_classes([IsAuthenticated])
 def getGroupsMembers(request):
     user = request.user
-    groups = Group_Members.objects.filter(user_id=user.id).values_list('id', flat=True).values('id')
-    print(groups[0]["id"])
-    groups = Crypto_Group.objects.filter(id=groups[0]["id"])
-    serializer = serializers.CryptoGroupGetSerializer(groups, many=True)
+    try:
+        groups = Group_Members.objects.filter(user_id=user.id).values_list('id', flat=True).values('id')
+        print(groups[0]["id"])
+        groups = Crypto_Group.objects.filter(id=groups[0]["id"])
+        serializer = serializers.CryptoGroupGetSerializer(groups, many=True)
+        return Response(serializer.data)
+    except:
+        return Response(404)
+
+@api_view(['GET'])
+def CryptoBiggestProfitLossGet(request):
+    queryset = Biggest_Profit_Loss.objects.all().order_by('-difference')
+    serializer = serializers.CryptoBiggestProfitLossGetSerializer(queryset, many=True)
     return Response(serializer.data)
+    # queryset = Biggest_Profit_Loss.objects.all().order_by('-difference')
 

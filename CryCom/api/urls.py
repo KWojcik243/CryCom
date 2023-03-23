@@ -14,5 +14,6 @@ urlpatterns = [
     path('register/', views.RegisterView.as_view(), name='register'),
     path('create_group/', views.CryptoGroupView.as_view(), name='create_group'),
     path('group_members/', views.getGroupsMembers),
-    path('join_group/',views.CryptoJoinGroupView.as_view(), name='join_room')
+    path('join_group/',views.CryptoJoinGroupView.as_view(), name='join_room'),
+    path('difference/', views.CryptoBiggestProfitLossGet, name='difference')
 ]
