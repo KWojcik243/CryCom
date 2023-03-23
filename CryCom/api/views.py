@@ -4,11 +4,13 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.permissions import IsAuthenticated
+from django.db.models import F
+from django.db.models.functions import Round
 
 from . import serializers
 
 from django.contrib.auth.models import User
-from ..models import Biggest_Profit_Loss, Group_Members, Crypto_Group
+from ..models import Biggest_Profit_Loss, Coins_Price, Coins_list, Group_Members, Crypto_Group
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -60,6 +62,15 @@ def getGroupsMembers(request):
 def CryptoBiggestProfitLossGet(request):
     queryset = Biggest_Profit_Loss.objects.all().order_by('-difference')
     serializer = serializers.CryptoBiggestProfitLossGetSerializer(queryset, many=True)
+    return Response(serializer.data)
+    # queryset = Biggest_Profit_Loss.objects.all().order_by('-difference')
+
+@api_view(['GET'])
+def CryptoBiggestProfitLossAllDataBestGet(request):
+    queryset = Biggest_Profit_Loss.objects.all().order_by('-difference')
+    coin = Coins_list.objects.filter(name=queryset[0].name)
+    best = Coins_Price.objects.filter(coin_id=coin)
+    serializer = serializers.CryptoBiggestProfitLossllDataBestGetSerializer(best, many=True)
     return Response(serializer.data)
     # queryset = Biggest_Profit_Loss.objects.all().order_by('-difference')
 

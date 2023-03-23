@@ -3,7 +3,7 @@ from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 
 from django.contrib.auth.models import User
-from ..models import Biggest_Profit_Loss, Group_Members, Crypto_Group
+from ..models import Biggest_Profit_Loss, Coins_Price, Group_Members, Crypto_Group
 
 class RegisterSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
@@ -86,4 +86,9 @@ class CryptoJoinGroupSerializer(serializers.ModelSerializer):
 class CryptoBiggestProfitLossGetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Biggest_Profit_Loss
+        fields = "__all__"
+
+class CryptoBiggestProfitLossllDataBestGetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Coins_Price
         fields = "__all__"

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types"
 import './table.css'
 const data = [
     { name: "Anom", age: 19, gender: "Male" , dif:22},
@@ -14,11 +15,18 @@ const data = [
   ]
 
   export default class TableProfit extends Component {
+
+    static propTypes = {
+        data:PropTypes.array
+    }
+
     render() {
+        const {data} = this.props;
+
         return (
         <div>
             <table>
-                <th colspan="4" className="upper-header upper-header-color-p">Top 10 biggest profit last week  </th>
+                <th colspan="4" className="upper-header upper-header-color-p">Top 10 biggest profit last week (USD) </th>
                 
                 <tr className="lower-header lower-header-color-p" >
                     <th>Name</th>
@@ -30,9 +38,9 @@ const data = [
                     return (
                     <tr key={key}>
                         <td>{val.name}</td>
-                        <td>{val.age}</td>
-                        <td>{val.gender}</td>
-                        <td className="diff-green">{val.dif}</td>
+                        <td>{val.last_week_price}</td>
+                        <td>{val.todays_price}</td>
+                        <td className="diff-green">{Math.round(val.difference * 10000000) / 10000000}</td>
                     </tr>
                     )
                 })}
