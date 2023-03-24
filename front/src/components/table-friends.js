@@ -1,16 +1,8 @@
 import React, { Component } from "react";
 import './table.css'
 const data = [
-    { name: "Anom", age: 19, gender: "Male" , pr: 19, dif:22},
-    { name: "Megha", age: 19, gender: "Female" , pr: 19, dif:22},
-    { name: "Subham", age: 25, gender: "Male", pr: 19, dif:22},
-    { name: "Anom", age: 19, gender: "Male" , pr: 19, dif:22},
-    { name: "Megha", age: 19, gender: "Female" , pr: 19, dif:22},
-    { name: "Subham", age: 25, gender: "Male", pr: 19, dif:22},
-    { name: "Subham", age: 25, gender: "Male", pr: 19, dif:22},
-    { name: "Anom", age: 19, gender: "Male" , pr: 19, dif:22},
-    { name: "Megha", age: 19, gender: "Female" , pr: 19, dif:22},
-    { name: "Subham", age: 25, gender: "Male", pr: 19, dif:22},
+    { name: "Anom", age: 2, gender: 1500 , pr: 1800, dif:600},
+    { name: "Maj", age: 2, gender: 1800 , pr: 1800, dif:0},
   ]
 
   export default class TableFriends extends Component {
