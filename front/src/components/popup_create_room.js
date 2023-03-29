@@ -2,7 +2,9 @@ import React, { useState, useContext } from "react";
 import Select from 'react-select';
 import AuthContext from "../context/AuthContext"
 import './popup_create_room.css'
+
 let formError = {"room": "Room name must be longer than 5 and shorter than 21", "password":"Password must be longer than 5 and shorter than 21"}
+
 export default function PopUpCreateRoom (props) {
   let {authTokens} = useContext(AuthContext)
   
@@ -41,8 +43,6 @@ export default function PopUpCreateRoom (props) {
     } else{
       formValidation = false
     }
-    console.log(formValidation)
-    
   }
 
   function validate(name, value){
@@ -183,7 +183,7 @@ export default function PopUpCreateRoom (props) {
                   <p className="checkbox-text">Do you want to choose cryptocurrency to compare?</p>
                   <input onClick={makeVis} className="checkbox-input" type="checkbox" name="One crypto type" value="True"/>
                 </div>
-                <button className="btn-s btn-create" type="submit">Create</button>
+                <button className="btn-s btn-create" type="submit" disabled={!formValidation} >Create</button>
               </form>
           </div>
       </div>
