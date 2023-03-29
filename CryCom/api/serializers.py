@@ -51,6 +51,14 @@ class CryptoGroupSerializer(serializers.ModelSerializer):
         ) 
 
         cg.save()
+
+        crypto_group_owner = Group_Members.objects.create(
+            user = User.objects.get(id=self.context['request'].user.id),
+            crypto_group = cg,
+            owner = True
+        )
+        crypto_group_owner.save()
+
         return cg
     
 class CryptoGroupGetSerializer(serializers.ModelSerializer):
