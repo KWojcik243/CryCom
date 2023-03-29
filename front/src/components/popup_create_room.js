@@ -3,7 +3,7 @@ import Select from 'react-select';
 import AuthContext from "../context/AuthContext"
 import './popup_create_room.css'
 
-let formError = {"room": "Room name must be longer than 5 and shorter than 21", "password":"Password must be longer than 5 and shorter than 21"}
+let formError = {"room": "", "password":""}
 
 export default function PopUpCreateRoom (props) {
   let {authTokens} = useContext(AuthContext)
@@ -43,6 +43,8 @@ export default function PopUpCreateRoom (props) {
     } else{
       formValidation = false
     }
+    console.log(formValidation)
+    formValidation? document.getElementById("sub-button").disabled = false : document.getElementById("sub-button").disabled = true;
   }
 
   function validate(name, value){
@@ -98,7 +100,12 @@ export default function PopUpCreateRoom (props) {
     
   let createRoom = async(e) => {
     e.preventDefault()
-    let selected = selectedOptions.map(o => o.value).join(",")
+    // let selected = ""
+    // try{
+      let selected = selectedOptions.map(o => o.value).join(",")
+    // }catch{
+    // }
+    
     console.log(selected)
     let response = await fetch('http://localhost:8000/api/create_group/', {
         method:'POST',
@@ -106,7 +113,7 @@ export default function PopUpCreateRoom (props) {
             'Content-type':'application/json',
             'Authorization':'Bearer ' + String(authTokens.access)
         },
-        body:JSON.stringify({'name':e.target.room_name.value,'password':e.target.password.value, "crypto_type": selected})
+        body:JSON.stringify({'name':e.target.room.value,'password':e.target.password.value, "crypto_type": selected})
     })
 
     let data = await response.json()
@@ -183,7 +190,7 @@ export default function PopUpCreateRoom (props) {
                   <p className="checkbox-text">Do you want to choose cryptocurrency to compare?</p>
                   <input onClick={makeVis} className="checkbox-input" type="checkbox" name="One crypto type" value="True"/>
                 </div>
-                <button className="btn-s btn-create" type="submit" disabled={!formValidation} >Create</button>
+                <button id="sub-button"className="btn-s btn-create" type="submit" >Create</button>
               </form>
           </div>
       </div>
