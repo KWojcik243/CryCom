@@ -56,8 +56,9 @@ class CryptoJoinGroupView(generics.CreateAPIView):
 def getGroupsMembers(request):
     user = request.user
     try:
-        groups = Group_Members.objects.filter(user_id=user.id).values_list('id', flat=True)
+        groups = Group_Members.objects.filter(user_id=user.id).values_list('crypto_group_id', flat=True)
         groups = Crypto_Group.objects.filter(id__in=groups)
+        
         serializer = serializers.CryptoGroupGetSerializer(groups, many=True)
         return Response(serializer.data)
     except:
