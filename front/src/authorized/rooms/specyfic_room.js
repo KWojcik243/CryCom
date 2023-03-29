@@ -4,8 +4,8 @@ import {IoMdSend} from 'react-icons/io';
 const data = [
     { name: "Anom", message: "Hi Maj ", date: "09.03.2023 16:59"},
     { name: "Maj", message: "Hi Anom", date: "09.03.2023 17:00"},
-    { name: "Anom", message: "Whats upsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", date: "09.03.2023 17:00"},
-    { name: "Maj", message: "Hi Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", date: "09.03.2023 17:00"},
+    { name: "Anom", message: "Whats upsssssssssssssssss", date: "09.03.2023 17:00"},
+    { name: "Maj", message: "You have big profit :D", date: "09.03.2023 17:00"},
   ]
 
 export default function SpecyficRoom(){

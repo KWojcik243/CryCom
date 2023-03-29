@@ -7,9 +7,8 @@ export default function PopUpCreateRoom (props) {
   let {authTokens} = useContext(AuthContext)
   
   const data = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
+    { value: 'bitcoin', label: 'Bitcoin' },
+    { value: 'ethernum', label: 'Ethernum' },
   ]
   let [visible, setVisible] = useState(false);
   let [selectedOptions, setSelectedOptions] = useState([]);
