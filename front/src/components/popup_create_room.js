@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import Select from 'react-select';
 import AuthContext from "../context/AuthContext"
 import './popup_create_room.css'
-
+let formError = {"room": "Room name must be longer than 5 and shorter than 21", "password":"Password must be longer than 5 and shorter than 21"}
 export default function PopUpCreateRoom (props) {
   let {authTokens} = useContext(AuthContext)
   
@@ -13,13 +13,63 @@ export default function PopUpCreateRoom (props) {
   ]
   let [visible, setVisible] = useState(false);
   let [selectedOptions, setSelectedOptions] = useState([]);
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     visible: false,
-  //     selectedOptions: [],
-  //   };
-  // };
+  let [room, setRoom]=useState("");
+  let [password, setPassword]=useState("");
+  let roomValidate = false
+  let passwordValidate = false
+  
+  let formValidation = false
+
+  function handleInput (e) {
+    switch(e.target.name){
+      case "room":
+        setRoom(e.target.value);
+        break;
+      case "password":
+        setPassword(e.target.value);
+        break;
+      default:
+        break;
+    }
+   
+    validate(e.target.name, e.target.value)
+    formPass()
+  }
+
+  function formPass (){
+    if(formError.room.length < 1 && formError.password.length < 1){
+      formValidation = true
+    } else{
+      formValidation = false
+    }
+    console.log(formValidation)
+    
+  }
+
+  function validate(name, value){
+    switch(name){
+      case 'room':
+        if (value.length > 5 && value.length < 21){
+          roomValidate = true;
+          formError.room = "";
+        } else {
+          roomValidate = false;
+          formError.room = "Room name must be longer than 5 and shorter than 21";
+        }
+        break;
+      case 'password':
+        if (value.length > 5 && value.length < 21){
+          passwordValidate = true;
+          formError.password = ""
+        } else {
+          passwordValidate = false;
+          formError.password = "Password must be longer than 5 and shorter than 21"
+        }
+        break
+      default:
+        break;
+    }
+  }
   
   let handleChange = (selectedOptions) => {
     setSelectedOptions( selectedOptions );
@@ -105,13 +155,13 @@ export default function PopUpCreateRoom (props) {
             </div>
               <form onSubmit={createRoom} className="create_room">
                 <div className="group-first">      
-                    <input className="login-input-f" type="text" name="room_name" required/>
+                    <input className="login-input-f" onChange={(event) => handleInput(event)} type="text" name="room" value={room} required/>
                     <span className="highlight"></span>
                     <span className="bar-cr"></span>
                     <label className="input-default-text"><b>Room name</b></label>
                 </div>
                 <div className="group">      
-                    <input className="login-input-f" type="password" name="password" required/>
+                    <input className="login-input-f" onChange={(event) => handleInput(event)} type="password" name="password" value={password} required/>
                     <span className="highlight"></span>
                     <span className="bar-cr"></span>
                     <label className='input-default-text'><b>Password</b></label>
