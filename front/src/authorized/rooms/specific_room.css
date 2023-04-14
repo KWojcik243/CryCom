@@ -81,16 +81,11 @@
     
 }
 .diff-mess-box{
-    /* display:inline-block; */
     background: linear-gradient(90deg, #B11DCA 0%, #F7470F 96.87%);
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     padding: 10px;
     color: white;
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* width: max-content; */
-    width: fit-content;
     max-width: 70%;
     word-break: break-all
 }
@@ -108,8 +103,8 @@
     padding: 10px;
     align-self: flex-end;
     max-width: 70%;
-    /* overflow-wrap: break-word; */
-    word-break: break-all;
+    overflow-wrap: break-word;
+    /* word-break: break-all; */
 }
 
 .messeges{

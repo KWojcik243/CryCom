@@ -1,4 +1,4 @@
-import './specyfic_room.css'
+import './specific_room.css'
 import TableFriends from '../../components/table-friends'
 import {IoMdSend} from 'react-icons/io';
 const data = [
@@ -8,9 +8,12 @@ const data = [
     { name: "Maj", message: "You have big profit :D", date: "09.03.2023 17:00"},
   ]
 
-export default function SpecyficRoom(){
+export default function SpecificRoom(){
     return(
         <div className='main'>
+            <div className=''>
+
+            </div>
             <div className='crypto-room'>
                 <TableFriends />
                 <div className='chat-flex'>

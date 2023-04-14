@@ -7,7 +7,7 @@ import Home from './authorized/main_page/home'
 import Login from './Unauthorized/login'
 import Register from './Unauthorized/register'
 import Rooms from  './authorized/rooms/rooms'
-import SpecyficRoom from './authorized/rooms/specyfic_room';
+import SpecificRoom from './authorized/rooms/specific_room';
 import Start from './Unauthorized/start';
 import PrivateRoute from './utils/PrivateRoute';
 import "./index.css";
@@ -64,7 +64,7 @@ ReactDOM.render(
               <PrivateRoute component={
                 <div>
                   <Nav />
-                  <SpecyficRoom />
+                  <SpecificRoom />
                   <Footer />
                 </div>} >
               </PrivateRoute>
