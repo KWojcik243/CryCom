@@ -11,8 +11,15 @@ const data = [
 export default function SpecificRoom(){
     return(
         <div className='main-room-box'>
-            {/* <div className='control-bar'>
-            </div> */}
+            <div className='control-bar'>
+                <div className='control-bar-wrapper'>
+                    <div className='room-image-settings control-bar-action'></div>
+                    <div className='control-bar-action'>Room Name</div>
+                    <div className='control-bar-action'>Copy access token</div>
+                    <div className='control-bar-action'>Add</div>
+                </div>
+                
+            </div>
             <div className='crypto-room'>
                 <TableFriends />
                 <div className='chat-flex'>
