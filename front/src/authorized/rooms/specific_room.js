@@ -10,10 +10,9 @@ const data = [
 
 export default function SpecificRoom(){
     return(
-        <div className='main'>
-            <div className=''>
-
-            </div>
+        <div className='main-room-box'>
+            {/* <div className='control-bar'>
+            </div> */}
             <div className='crypto-room'>
                 <TableFriends />
                 <div className='chat-flex'>
