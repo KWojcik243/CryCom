@@ -119,10 +119,10 @@
 }
 
 .control-bar{
-    
     display: flex;
     overflow: hidden;
     background-color: white;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
     font-family:'Cabin';
     font-size: 20px;
     height: 60px;
