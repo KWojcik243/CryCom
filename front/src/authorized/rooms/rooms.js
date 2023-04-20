@@ -37,9 +37,6 @@ export default function Rooms(){
 
 
     const navigate = useNavigate()
-    function goToRoom(e){
-        navigate('/rooms/1')
-    }
 
     const [visibleCreateRoom, setVisibleCreateRoom] = useState(false);
     const [visibleJoinRoom, setVisibleJoinRoom] = useState(false);

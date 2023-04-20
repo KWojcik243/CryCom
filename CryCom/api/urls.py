@@ -18,4 +18,5 @@ urlpatterns = [
     path('difference/', views.CryptoBiggestProfitLossGet, name='difference'),
     path('actual_best/', views.CryptoBiggestProfitLossAllDataBestGet, name='actual_best'),
     path('actual_worst/', views.CryptoBiggestProfitLossAllDataWorstGet, name='actual_worst'),
+    path('group_info/',views.GetGroupInformation)
 ]

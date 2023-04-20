@@ -2,6 +2,8 @@ import './specific_room.css'
 import TableFriends from '../../components/table-friends'
 import PopUpAddValues from '../../components/popup_add_values';
 import {useState, useEffect, useContext} from 'react';
+import AuthContext from "../../context/AuthContext"
+import { useParams } from 'react-router-dom';
 import {IoMdSend} from 'react-icons/io';
 const data = [
     { name: "Anom", message: "Hi Maj ", date: "09.03.2023 16:59"},
@@ -11,8 +13,31 @@ const data = [
   ]
 
 export default function SpecificRoom(){
-    // function 
+    let { roomId } = useParams();
     const [visibleAddValues, setVisibleAddValues] = useState(false);
+    let {authTokens, logoutUser} = useContext(AuthContext)
+    useEffect(() => {
+        getGroupInfo()
+        
+    }, [])
+
+    let [group,setGroup] = useState([])
+    let getGroupInfo = async () => {
+        let response = await fetch(`http://localhost:8000/api/group_info/?room-id=${roomId}`, {
+            method:'GET',
+            headers:{
+                'Content-type':'application/json',
+                'Authorization':'Bearer ' + String(authTokens.access)
+            },})
+
+        let data = await response.json()
+        console.log(data)
+        if(response.status === 200){
+            setGroup(data)
+        }else if(response.statusText === 'Unauthorized'){
+            logoutUser()
+        }
+    }
 
     function AddValuesShow(e){
         setVisibleAddValues(!visibleAddValues);
@@ -23,8 +48,8 @@ export default function SpecificRoom(){
             <div className='control-bar'>
                 <div className='control-bar-wrapper'>
                     <div className='room-image-settings control-bar-action'></div>
-                    <div className='control-bar-action'>Room Name</div>
-                    <div className='control-bar-action'>Copy access token</div>
+                    <div className='control-bar-action'>{group.room_name}</div>
+                    <div className='control-bar-action' onClick={() => {navigator.clipboard.writeText(group.room_token)}}>Copy access token</div>
                     <div className='control-bar-action' onClick={AddValuesShow}>Add</div>
                 </div>
                 {visibleAddValues ? <PopUpAddValues toggle={AddValuesShow} /> : null}

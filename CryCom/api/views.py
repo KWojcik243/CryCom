@@ -92,3 +92,8 @@ def CryptoBiggestProfitLossAllDataWorstGet(request):
         {"id": coin.name,
     "color": "hsl(281, 86%, 49%)","data":serializer.data}])
 
+
+@api_view(['GET'])
+def GetGroupInformation(request):
+    group = Crypto_Group.objects.get(id=request.GET.get('room-id'))
+    return Response({"room_name":group.name, "room_token":group.token})

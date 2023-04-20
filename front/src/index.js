@@ -59,7 +59,7 @@ ReactDOM.render(
           </AuthProvider>
           
           }></Route>
-          <Route path='/rooms/1' element={
+          <Route path='/rooms/:roomId' element={
             <AuthProvider>
               <PrivateRoute component={
                 <div>
