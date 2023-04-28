@@ -47,7 +47,7 @@ export default function SpecificRoom(){
     return(
         <div className='main-room-box'>
             <div className='room-menu'>
-                <img className='room-image-mini' src={no_photo} />
+                <img className='room-image-mini' alt='room' src={no_photo} />
                     <div className='control-bar-wrapper'>
                         <div className='control-bar-action'>{group.room_name}</div>
                         <div className='control-bar-action' onClick={() => {navigator.clipboard.writeText(group.room_token)}}>Copy access token</div>
