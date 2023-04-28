@@ -2,7 +2,7 @@ import {useNavigate} from 'react-router-dom'
 import {useState, useEffect, useContext} from 'react';
 import AuthContext from "../../context/AuthContext"
 import './rooms.css';
-import Brak from './brak_zdj.jpg'
+import no_photo from '../../assets/no_photo.jpg'
 import PopUpCreateRoom from '../../components/popup_create_room';
 import PopUpJoinRoom from '../../components/popup_join_room';
 export default function Rooms(){
@@ -30,7 +30,7 @@ export default function Rooms(){
 
     let showGroups = groups.map((item,index) => (
         <div key={index} className="single-room">
-            <img className='room-image' src={Brak} />
+            <img className='room-image' src={no_photo} />
             <p className="room-name">{item.name}</p>
         </div>
 ))

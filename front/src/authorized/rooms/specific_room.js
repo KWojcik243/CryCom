@@ -2,6 +2,7 @@ import './specific_room.css'
 import TableFriends from '../../components/table-friends'
 import PopUpAddValues from '../../components/popup_add_values';
 import {useState, useEffect, useContext} from 'react';
+import no_photo from '../../assets/no_photo.jpg'
 import AuthContext from "../../context/AuthContext"
 import { useParams } from 'react-router-dom';
 import {IoMdSend} from 'react-icons/io';
@@ -45,14 +46,15 @@ export default function SpecificRoom(){
 
     return(
         <div className='main-room-box'>
-            <div className='control-bar'>
-                <div className='control-bar-wrapper'>
-                    <div className='room-image-settings control-bar-action'></div>
-                    <div className='control-bar-action'>{group.room_name}</div>
-                    <div className='control-bar-action' onClick={() => {navigator.clipboard.writeText(group.room_token)}}>Copy access token</div>
-                    <div className='control-bar-action' onClick={AddValuesShow}>Add</div>
-                </div>
-                {visibleAddValues ? <PopUpAddValues toggle={AddValuesShow} /> : null}
+            <div className='room-menu'>
+                <img className='room-image-mini' src={no_photo} />
+                    <div className='control-bar-wrapper'>
+                        <div className='control-bar-action'>{group.room_name}</div>
+                        <div className='control-bar-action' onClick={() => {navigator.clipboard.writeText(group.room_token)}}>Copy access token</div>
+                        <div className='control-bar-action' onClick={AddValuesShow}>Add</div>
+                    </div>
+                    {visibleAddValues ? <PopUpAddValues toggle={AddValuesShow} /> : null}
+                
             </div>
             <div className='crypto-room'>
                 <TableFriends />
