@@ -14,6 +14,7 @@ class Crypto_Group(models.Model):
     name = models.CharField(max_length=20)
     crypto_type = models.TextField()
     password = models.CharField(max_length=20)
+    img_path = models.TextField()
 
 
 class Group_Members(models.Model):
